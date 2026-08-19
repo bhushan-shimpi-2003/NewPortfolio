@@ -11,9 +11,9 @@ function getStarTexture() {
   
   const gradient = ctx.createRadialGradient(32, 32, 0, 32, 32, 32);
   gradient.addColorStop(0, 'rgba(255, 255, 255, 1)');
-  gradient.addColorStop(0.15, 'rgba(224, 242, 254, 0.9)');
-  gradient.addColorStop(0.4, 'rgba(56, 189, 248, 0.45)');
-  gradient.addColorStop(0.8, 'rgba(56, 189, 248, 0.1)');
+  gradient.addColorStop(0.15, 'rgba(224, 242, 254, 0.95)');
+  gradient.addColorStop(0.4, 'rgba(56, 189, 248, 0.5)');
+  gradient.addColorStop(0.8, 'rgba(56, 189, 248, 0.12)');
   gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
   
   ctx.fillStyle = gradient;
@@ -30,30 +30,31 @@ function InteractiveStarsScene() {
   const scrollY = useRef(0);
   const starTexture = useMemo(() => getStarTexture(), []);
 
-  const count = 300; // Optimal density for realism
+  // Dense, rich starry cosmos
+  const count = 600;
 
   // Initialize particle positions, anchors, velocities, and colors
-  const { positions, basePositions, velocities, colors, scales } = useMemo(() => {
+  const { positions, basePositions, velocities, colors } = useMemo(() => {
     const pos = new Float32Array(count * 3);
     const base = new Float32Array(count * 3);
     const vel = new Float32Array(count * 3);
     const col = new Float32Array(count * 3);
-    const sc = new Float32Array(count);
 
     const palette = [
-      new THREE.Color('#38bdf8'), // Cyan
-      new THREE.Color('#93c5fd'), // Ice Blue
-      new THREE.Color('#818cf8'), // Indigo
-      new THREE.Color('#e0f2fe'), // Pale Blue
-      new THREE.Color('#ffffff'), // Pure White
+      new THREE.Color('#38bdf8'), // Vibrant Cyan
+      new THREE.Color('#93c5fd'), // Soft Ice Blue
+      new THREE.Color('#818cf8'), // Electric Indigo
+      new THREE.Color('#e0f2fe'), // Shimmering Pale Blue
+      new THREE.Color('#ffffff'), // Brilliant White
+      new THREE.Color('#67e8f9'), // Bright Aqua
     ];
 
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
-      // Spread across camera view frustum
-      const x = (Math.random() - 0.5) * 36;
-      const y = (Math.random() - 0.5) * 26;
-      const z = (Math.random() - 0.5) * 14;
+      // Spread across wide camera frustum
+      const x = (Math.random() - 0.5) * 38;
+      const y = (Math.random() - 0.5) * 28;
+      const z = (Math.random() - 0.5) * 16;
 
       pos[i3] = x;
       pos[i3 + 1] = y;
@@ -63,16 +64,14 @@ function InteractiveStarsScene() {
       base[i3 + 1] = y;
       base[i3 + 2] = z;
 
-      vel[i3] = (Math.random() - 0.5) * 0.002;
-      vel[i3 + 1] = (Math.random() - 0.5) * 0.002;
+      vel[i3] = (Math.random() - 0.5) * 0.0025;
+      vel[i3 + 1] = (Math.random() - 0.5) * 0.0025;
       vel[i3 + 2] = (Math.random() - 0.5) * 0.001;
 
       const chosenColor = palette[Math.floor(Math.random() * palette.length)];
       col[i3] = chosenColor.r;
       col[i3 + 1] = chosenColor.g;
       col[i3 + 2] = chosenColor.b;
-
-      sc[i] = Math.random() * 0.6 + 0.4;
     }
 
     return {
@@ -80,14 +79,12 @@ function InteractiveStarsScene() {
       basePositions: base,
       velocities: vel,
       colors: col,
-      scales: sc,
     };
   }, [count]);
 
-  // Window events for Mouse movement and Scrolling
+  // Window events for Pointer movement and Scrolling
   useEffect(() => {
     const handlePointerMove = (e) => {
-      // Normalize to [-1, 1] screen coordinates
       const x = (e.clientX / window.innerWidth) * 2 - 1;
       const y = -(e.clientY / window.innerHeight) * 2 + 1;
       mouse.current = { x, y, active: true };
@@ -117,7 +114,7 @@ function InteractiveStarsScene() {
     };
   }, []);
 
-  // Frame Physics: Real-time Cursor Repulsion & Scroll Parallax
+  // Frame Physics: Repulsion Away From Cursor + Parallax Scroll
   useFrame(({ viewport, clock }) => {
     if (!pointsRef.current) return;
 
@@ -132,11 +129,11 @@ function InteractiveStarsScene() {
     const mouseActive = mouse.current.active;
 
     // Scroll parallax translation
-    const scrollParallaxY = -(scrollY.current * 0.004) % 24;
+    const scrollParallaxY = -(scrollY.current * 0.004) % 28;
 
-    const repulsionRadius = 4.2; // Distance threshold to trigger repulsion
-    const repulsionStrength = 0.55; // Force pushing stars away
-    const returnSpeed = 0.045; // Smooth spring dampening
+    const repulsionRadius = 4.0;
+    const repulsionStrength = 0.6;
+    const returnSpeed = 0.045;
 
     for (let i = 0; i < count; i++) {
       const i3 = i * 3;
@@ -146,23 +143,23 @@ function InteractiveStarsScene() {
       basePositions[i3 + 1] += velocities[i3 + 1];
 
       // Screen boundary wrap-around
-      if (basePositions[i3] > 18) basePositions[i3] = -18;
-      if (basePositions[i3] < -18) basePositions[i3] = 18;
-      if (basePositions[i3 + 1] > 13) basePositions[i3 + 1] = -13;
-      if (basePositions[i3 + 1] < -13) basePositions[i3 + 1] = 13;
+      if (basePositions[i3] > 19) basePositions[i3] = -19;
+      if (basePositions[i3] < -19) basePositions[i3] = 19;
+      if (basePositions[i3 + 1] > 14) basePositions[i3 + 1] = -14;
+      if (basePositions[i3 + 1] < -14) basePositions[i3 + 1] = 14;
 
-      // Calculate anchor point combining base drift, parallax scroll, and organic shimmer
+      // Anchor point combining drift, scroll parallax, and micro-twinkle
       const anchorX = basePositions[i3] + Math.sin(time * 0.4 + i) * 0.12;
       const anchorY = basePositions[i3 + 1] + scrollParallaxY + Math.cos(time * 0.35 + i) * 0.12;
       const anchorZ = basePositions[i3 + 2];
 
-      // Vector distance from star to cursor
+      // Distance from star to cursor
       const dx = posArr[i3] - targetMouseX;
       const dy = posArr[i3 + 1] - targetMouseY;
       const dist = Math.sqrt(dx * dx + dy * dy);
 
       if (mouseActive && dist < repulsionRadius && dist > 0.01) {
-        // DIRECT REPULSION: Stars push outward away from the cursor!
+        // DIRECT REPULSION: Stars push away from cursor
         const force = Math.pow(1 - dist / repulsionRadius, 1.5) * repulsionStrength;
         const pushX = (dx / dist) * force;
         const pushY = (dy / dist) * force;
@@ -170,7 +167,7 @@ function InteractiveStarsScene() {
         posArr[i3] += pushX;
         posArr[i3 + 1] += pushY;
       } else {
-        // Smoothly ease back to anchor position when cursor moves away
+        // Smoothly return to anchor position
         posArr[i3] += (anchorX - posArr[i3]) * returnSpeed;
         posArr[i3 + 1] += (anchorY - posArr[i3 + 1]) * returnSpeed;
       }
@@ -199,7 +196,7 @@ function InteractiveStarsScene() {
       </bufferGeometry>
       <pointsMaterial
         map={starTexture}
-        size={0.22}
+        size={0.2}
         vertexColors
         transparent
         opacity={0.88}
