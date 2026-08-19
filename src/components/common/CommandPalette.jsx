@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Globe, Code, User, Mail, Sparkles, X, ArrowRight } from 'lucide-react';
@@ -153,7 +153,7 @@ export default function CommandPalette({ isOpen, onClose }) {
           {/* Footer hint */}
           <div className="px-4 py-2.5 bg-slate-100/70 dark:bg-slate-900/70 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between text-[11px] text-slate-500">
             <span>Press <kbd className="px-1 py-0.5 rounded bg-slate-200 dark:bg-slate-800 font-mono">ESC</kbd> to close</span>
-            <span>Bhushan Shimpi • Freelance Platform</span>
+            <span>Bhushan Shimpi â€¢ Freelance Platform</span>
           </div>
 
         </motion.div>

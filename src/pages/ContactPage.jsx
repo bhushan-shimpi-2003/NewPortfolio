@@ -66,14 +66,14 @@ export default function ContactPage() {
               </div>
               <div>
                 <h4 className="font-display font-bold text-lg">Instant WhatsApp Chat</h4>
-                <p className="text-xs text-emerald-100">+91 95799 38131 (Pune, India)</p>
+                <p className="text-xs text-emerald-100">+91 70207 10581 (Pune, India)</p>
               </div>
             </div>
             <p className="text-xs text-emerald-100 leading-relaxed">
               Prefer chatting directly? Message me on WhatsApp for immediate discussion, project estimates, or quick questions.
             </p>
             <a
-              href="https://wa.me/919579938131?text=Hi%20Bhushan,%20I%20would%20like%20to%20discuss%20a%20project."
+              href="https://wa.me/9170207 10581?text=Hi%20Bhushan,%20I%20would%20like%20to%20discuss%20a%20project."
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-emerald-800 font-bold text-xs shadow hover:scale-105 transition-all"

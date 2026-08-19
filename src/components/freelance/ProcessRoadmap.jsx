@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Compass, Palette, Code2, Rocket, ArrowRight } from 'lucide-react';
 import { clientProcessSteps } from '../../data/servicesData';
 import { useSound } from '../../context/SoundContext';

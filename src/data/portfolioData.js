@@ -1,11 +1,11 @@
-export const personalInfo = {
+﻿export const personalInfo = {
   name: "Bhushan Kishor Shimpi",
   title: "Full Stack, React Native & AI Developer",
   tagline: "I build high-performance Web Applications, Cross-Platform Mobile Apps, and AI-driven platforms that turn complex problems into scalable revenue.",
   status: "Available for Q3/Q4 Freelance Projects",
   location: "Pune, Maharashtra, India",
   email: "shimpibhushan2503@gmail.com",
-  phone: "+91 95799 38131",
+  phone: "+91 70207 10581",
   portfolioUrl: "https://bhushanshimpi.vercel.app",
   github: "https://github.com/bhushan-shimpi-2003",
   githubUsername: "bhushan-shimpi-2003",
@@ -241,7 +241,7 @@ export const experienceData = [
     company: "QLOAX LLP",
     location: "Pune, Maharashtra",
     type: "Full-Time",
-    period: "June 2026 – Present",
+    period: "June 2026 â€“ Present",
     highlights: [
       "Develop and maintain scalable web and mobile apps using React.js, Node.js, Express.js, MongoDB, and React Native, deploying via automated CI/CD pipelines.",
       "Design and integrate robust RESTful APIs for seamless frontend-backend communication and third-party SaaS integrations.",
@@ -254,7 +254,7 @@ export const experienceData = [
     company: "QLOAX LLP",
     location: "Pune, Maharashtra",
     type: "Internship",
-    period: "Dec 2025 – May 2026",
+    period: "Dec 2025 â€“ May 2026",
     highlights: [
       "Developed enterprise School ERP modules for student records, attendance tracking, fee management, and performance reporting using React.js and Tailwind CSS.",
       "Built backend RESTful APIs and business logic using Node.js and Express.js with robust schema validation.",
@@ -267,7 +267,7 @@ export const experienceData = [
     company: "Echo Lily Entertainment Pvt. Ltd.",
     location: "Remote",
     type: "Internship",
-    period: "Jan 2025 – Nov 2025",
+    period: "Jan 2025 â€“ Nov 2025",
     highlights: [
       "Built responsive, high-converting business websites using HTML5, CSS3, JavaScript, and modern frontend frameworks.",
       "Translated Figma design mockups into pixel-perfect, mobile-responsive web pages adhering to modern SEO best practices.",
@@ -282,7 +282,7 @@ export const educationData = [
     specialization: "Computer Applications & Software Engineering",
     institution: "Indira College of Engineering & Management",
     location: "Pune, Maharashtra",
-    period: "2024 – 2026",
+    period: "2024 â€“ 2026",
     grade: "CGPA: 9.16 / 10",
     badge: "Post Graduation",
     details: "Specialized in Advanced Full-Stack Architecture, Distributed Systems, Cloud Computing, Database Management, and Mobile Application Development."
@@ -292,7 +292,7 @@ export const educationData = [
     specialization: "Computer Applications",
     institution: "North Maharashtra University",
     location: "Maharashtra, India",
-    period: "2021 – 2024",
+    period: "2021 â€“ 2024",
     grade: "CGPA: 9.21 / 10",
     badge: "Graduation",
     details: "Foundational mastery in Data Structures, Object-Oriented Programming (Java/C++), SQL Databases, and Web Development Principles."
@@ -302,7 +302,7 @@ export const educationData = [
     specialization: "Science & Mathematics",
     institution: "Maharashtra State Board",
     location: "Maharashtra, India",
-    period: "2019 – 2021",
+    period: "2019 â€“ 2021",
     grade: "Percentage: 84.40%",
     badge: "Higher Secondary"
   },
@@ -311,7 +311,7 @@ export const educationData = [
     specialization: "General Education",
     institution: "NMV School, Chunchale",
     location: "Maharashtra, India",
-    period: "June 2018 – Mar 2019",
+    period: "June 2018 â€“ Mar 2019",
     grade: "Percentage: 76.60%",
     badge: "Secondary School"
   }

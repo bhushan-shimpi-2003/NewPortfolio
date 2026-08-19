@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function AvailabilityBadge({ text = "Available for Q3/Q4 Freelance Projects", size = "md" }) {

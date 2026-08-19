@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
@@ -7,7 +7,7 @@ import {
 } from 'lucide-react';
 import { FaWhatsapp, FaGithub, FaLinkedin } from 'react-icons/fa';
 import profilePhoto from '../assets/profile.png';
-import { personalInfo, projectsData, educationData } from '../data/portfolioData';
+import { personalInfo, projectsData } from '../data/portfolioData';
 import { useSound } from '../context/SoundContext';
 
 export default function HomePage() {
@@ -26,21 +26,21 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-28 pb-20 space-y-24 md:space-y-32">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-16 space-y-16 md:space-y-20">
       
-      {/* 1. HERO SECTION (WITH AUTHENTIC PROFILE PICTURE) */}
-      <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+      {/* 1. HERO SECTION (WITH PROFILE PICTURE) */}
+      <section className="relative max-w-7xl mx-auto px-2 sm:px-4 pt-2 sm:pt-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
           
           {/* Left Hero Content (7 Cols) */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="lg:col-span-7 space-y-6"
+            className="lg:col-span-7 space-y-5"
           >
             {/* Minimal Availability & Location Status */}
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="flex flex-wrap items-center gap-2.5">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-xs text-slate-700 dark:text-slate-300">
                 <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 <span className="font-semibold text-emerald-600 dark:text-emerald-400">Available for Freelance Projects</span>
@@ -59,16 +59,16 @@ export default function HomePage() {
 
             {/* Short Concise Description */}
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-lg leading-relaxed">
-              Hi, I'm <strong className="text-slate-950 dark:text-white">Bhushan Shimpi</strong>. I build modern websites, MERN applications, React Native apps and AI-powered products for startups and businesses — from idea to deployment.
+              Hi, I'm <strong className="text-slate-950 dark:text-white">Bhushan Shimpi</strong>. I build modern websites, MERN applications, React Native apps and AI-powered products for startups and businesses â€” from idea to deployment.
             </p>
 
             {/* Two Focused CTAs */}
-            <div className="flex flex-wrap items-center gap-3.5 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-1">
               <Link
                 to="/contact"
                 onMouseEnter={playHover}
                 onClick={playClick}
-                className="px-7 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm shadow-xl shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
+                className="px-6 py-3 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm shadow-xl shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
               >
                 <span>Start a Project</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -76,7 +76,7 @@ export default function HomePage() {
 
               <a
                 href="#work"
-                className="px-7 py-3.5 rounded-2xl glass-card text-slate-800 dark:text-slate-200 font-semibold text-xs sm:text-sm hover:border-indigo-500 transition-all flex items-center gap-2"
+                className="px-6 py-3 rounded-2xl glass-card text-slate-800 dark:text-slate-200 font-semibold text-xs sm:text-sm hover:border-indigo-500 transition-all flex items-center gap-2"
               >
                 <span>View My Work</span>
                 <ArrowDown className="w-3.5 h-3.5" />
@@ -84,7 +84,7 @@ export default function HomePage() {
             </div>
 
             {/* Minimal Credibility Indicators */}
-            <div className="flex flex-wrap items-center gap-6 pt-3 text-xs text-slate-600 dark:text-slate-400">
+            <div className="flex flex-wrap items-center gap-5 pt-1 text-xs text-slate-600 dark:text-slate-400">
               <div className="flex items-center gap-1.5">
                 <Check className="w-4 h-4 text-emerald-500 shrink-0" />
                 <span>100% Source Code Transfer</span>
@@ -108,45 +108,45 @@ export default function HomePage() {
             transition={{ duration: 0.7 }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative rounded-3xl glass-card hologram-border p-4 sm:p-5 shadow-2xl space-y-4">
+            <div className="relative rounded-3xl glass-card hologram-border p-4 shadow-2xl space-y-3 max-w-sm mx-auto">
               
               {/* Profile Photo Container */}
               <div className="relative rounded-2xl overflow-hidden aspect-square border border-slate-200 dark:border-white/10 group">
                 <img
                   src={profilePhoto}
-                  alt="Bhushan Shimpi — Full Stack & Mobile Engineer"
+                  alt="Bhushan Shimpi â€” Full Stack & Mobile Engineer"
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
 
                 {/* Floating Tech Badge 1 */}
                 <motion.div
-                  animate={{ y: [0, -6, 0] }}
+                  animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute top-3 left-3 px-3 py-1.5 rounded-xl bg-slate-950/80 text-white backdrop-blur-md text-[11px] font-mono font-bold flex items-center gap-1.5 shadow-lg border border-white/10"
+                  className="absolute top-3 left-3 px-3 py-1 rounded-xl bg-slate-950/80 text-white backdrop-blur-md text-[11px] font-mono font-bold flex items-center gap-1.5 shadow-lg border border-white/10"
                 >
                   <Zap className="w-3.5 h-3.5 text-amber-400" />
-                  <span>⚡ MERN Stack</span>
+                  <span>âš¡ MERN Stack</span>
                 </motion.div>
 
                 {/* Floating Tech Badge 2 */}
                 <motion.div
-                  animate={{ y: [0, 6, 0] }}
+                  animate={{ y: [0, 5, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                  className="absolute bottom-3 right-3 px-3 py-1.5 rounded-xl bg-slate-950/80 text-white backdrop-blur-md text-[11px] font-mono font-bold flex items-center gap-1.5 shadow-lg border border-white/10"
+                  className="absolute bottom-3 right-3 px-3 py-1 rounded-xl bg-slate-950/80 text-white backdrop-blur-md text-[11px] font-mono font-bold flex items-center gap-1.5 shadow-lg border border-white/10"
                 >
                   <Smartphone className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>📱 React Native</span>
+                  <span>ðŸ“± React Native</span>
                 </motion.div>
               </div>
 
               {/* Profile Meta Footer */}
               <div className="flex items-center justify-between pt-1">
                 <div>
-                  <h3 className="font-display font-black text-lg text-slate-950 dark:text-white">
+                  <h3 className="font-display font-bold text-base text-slate-950 dark:text-white">
                     Bhushan Shimpi
                   </h3>
-                  <p className="text-xs text-slate-500 font-mono">
-                    Full Stack & AI Engineer · Pune, India
+                  <p className="text-[11px] text-slate-500 font-mono">
+                    Full Stack & AI Engineer Â· Pune, India
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
@@ -178,32 +178,32 @@ export default function HomePage() {
       </section>
 
       {/* 2. MINIMAL PROOF STRIP */}
-      <section className="border-y border-slate-200/80 dark:border-slate-800/80 py-5 bg-slate-100/50 dark:bg-slate-900/40 backdrop-blur-md">
+      <section className="border-y border-slate-200/60 dark:border-white/5 py-4 bg-slate-100/30 dark:bg-slate-900/30 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap items-center justify-between gap-6 text-xs font-mono font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">
+          <div className="flex flex-wrap items-center justify-between gap-4 text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">
             <span>FULL STACK</span>
-            <span className="hidden sm:inline opacity-30">•</span>
+            <span className="hidden sm:inline opacity-30">â€¢</span>
             <span>MERN ARCHITECTURE</span>
-            <span className="hidden sm:inline opacity-30">•</span>
+            <span className="hidden sm:inline opacity-30">â€¢</span>
             <span>REACT NATIVE MOBILE</span>
-            <span className="hidden sm:inline opacity-30">•</span>
+            <span className="hidden sm:inline opacity-30">â€¢</span>
             <span>AI INTEGRATION</span>
-            <span className="hidden sm:inline opacity-30">•</span>
+            <span className="hidden sm:inline opacity-30">â€¢</span>
             <span>SUPABASE & POSTGRES</span>
           </div>
         </div>
       </section>
 
       {/* 3. WHAT I BUILD (3 PRIMARY SERVICES) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-7xl mx-auto px-2 sm:px-4">
         
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-14 space-y-3">
+        <div className="text-center max-w-2xl mx-auto mb-10 space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-mono font-bold">
             <Layers className="w-3.5 h-3.5" />
             Core Engineering Services
           </div>
-          <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 dark:text-white">
+          <h2 className="font-display font-black text-2xl sm:text-3xl text-slate-900 dark:text-white">
             What I Deliver
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
@@ -212,16 +212,16 @@ export default function HomePage() {
         </div>
 
         {/* 3 Core Service Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           
           {/* 01 Web Applications */}
-          <div className="p-8 rounded-3xl glass-card hologram-border space-y-5 flex flex-col justify-between hover:border-indigo-500 transition-all group">
-            <div className="space-y-4">
+          <div className="p-6 sm:p-7 rounded-3xl glass-card hologram-border space-y-4 flex flex-col justify-between hover:border-indigo-500 transition-all group">
+            <div className="space-y-3">
               <span className="font-mono text-xs font-bold text-slate-400">01</span>
               <div className="p-3 w-fit rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
-                <Globe className="w-6 h-6" />
+                <Globe className="w-5 h-5" />
               </div>
-              <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white">
+              <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white">
                 Web Applications
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -229,19 +229,19 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="pt-4 border-t border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-500">
-              React · Next.js · Node.js · Express · MongoDB · Supabase
+            <div className="pt-3 border-t border-slate-200/60 dark:border-white/5 text-xs font-mono text-slate-500">
+              React Â· Next.js Â· Node.js Â· Express Â· MongoDB Â· Supabase
             </div>
           </div>
 
           {/* 02 Mobile Applications */}
-          <div className="p-8 rounded-3xl glass-card hologram-border space-y-5 flex flex-col justify-between hover:border-cyan-500 transition-all group">
-            <div className="space-y-4">
+          <div className="p-6 sm:p-7 rounded-3xl glass-card hologram-border space-y-4 flex flex-col justify-between hover:border-cyan-500 transition-all group">
+            <div className="space-y-3">
               <span className="font-mono text-xs font-bold text-slate-400">02</span>
               <div className="p-3 w-fit rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400">
-                <Smartphone className="w-6 h-6" />
+                <Smartphone className="w-5 h-5" />
               </div>
-              <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white">
+              <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white">
                 Mobile Applications
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -249,19 +249,19 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="pt-4 border-t border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-500">
-              React Native · Expo · iOS & Android · Offline Sync · Push APIs
+            <div className="pt-3 border-t border-slate-200/60 dark:border-white/5 text-xs font-mono text-slate-500">
+              React Native Â· Expo Â· iOS & Android Â· Offline Sync Â· Push APIs
             </div>
           </div>
 
           {/* 03 AI Applications */}
-          <div className="p-8 rounded-3xl glass-card hologram-border space-y-5 flex flex-col justify-between hover:border-emerald-500 transition-all group">
-            <div className="space-y-4">
+          <div className="p-6 sm:p-7 rounded-3xl glass-card hologram-border space-y-4 flex flex-col justify-between hover:border-emerald-500 transition-all group">
+            <div className="space-y-3">
               <span className="font-mono text-xs font-bold text-slate-400">03</span>
               <div className="p-3 w-fit rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
-                <Cpu className="w-6 h-6" />
+                <Cpu className="w-5 h-5" />
               </div>
-              <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white">
+              <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white">
                 AI Applications
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
@@ -269,20 +269,20 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="pt-4 border-t border-slate-200 dark:border-slate-800 text-xs font-mono text-slate-500">
-              LLM APIs · Streaming · ATS Scoring · Vector Search · OpenAI
+            <div className="pt-3 border-t border-slate-200/60 dark:border-white/5 text-xs font-mono text-slate-500">
+              LLM APIs Â· Streaming Â· ATS Scoring Â· Vector Search Â· OpenAI
             </div>
           </div>
 
         </div>
 
         {/* Clean CTA */}
-        <div className="text-center pt-8">
+        <div className="text-center pt-6">
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline"
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline"
           >
-            <span>Need a project estimate? → Start a Project</span>
+            <span>Need a project estimate? â†’ Start a Project</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -290,14 +290,14 @@ export default function HomePage() {
       </section>
 
       {/* 4. SELECTED WORK (3 STRONGEST PROJECTS) */}
-      <section id="work" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="work" className="max-w-7xl mx-auto px-2 sm:px-4">
         
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
-          <div className="space-y-2">
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-3">
+          <div className="space-y-1.5">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-mono font-bold">
               Proof of Delivery
             </div>
-            <h2 className="font-display font-black text-3xl sm:text-4xl text-slate-900 dark:text-white">
+            <h2 className="font-display font-black text-2xl sm:text-3xl text-slate-900 dark:text-white">
               Selected Work
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-xl">
@@ -313,15 +313,15 @@ export default function HomePage() {
         </div>
 
         {/* 3 Flagship Case Studies */}
-        <div className="space-y-10">
+        <div className="space-y-8">
           {flagshipProjects.map((project, idx) => (
             <div
               key={project.slug}
-              className="p-8 sm:p-10 rounded-3xl glass-card hologram-border grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center"
+              className="p-6 sm:p-8 rounded-3xl glass-card hologram-border grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center"
             >
               {/* Left Column: Details (7 Cols) */}
-              <div className="lg:col-span-7 space-y-5">
-                <div className="flex items-center gap-3">
+              <div className="lg:col-span-7 space-y-4">
+                <div className="flex items-center gap-2.5">
                   <span className="font-mono text-xs font-bold text-slate-400">0{idx + 1}</span>
                   <span className="px-2.5 py-0.5 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-mono font-bold">
                     {project.badge}
@@ -329,42 +329,42 @@ export default function HomePage() {
                 </div>
 
                 <div>
-                  <h3 className="font-display font-black text-2xl sm:text-3xl text-slate-900 dark:text-white">
+                  <h3 className="font-display font-black text-xl sm:text-2xl text-slate-900 dark:text-white">
                     {project.title}
                   </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-2 leading-relaxed">
+                  <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 mt-1.5 leading-relaxed">
                     {project.overview}
                   </p>
                 </div>
 
                 {/* Problem vs Solution Split */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
-                  <div className="p-3.5 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-slate-700 dark:text-slate-300">
-                    <strong className="text-rose-600 dark:text-rose-400 block mb-1">Problem:</strong>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs">
+                  <div className="p-3 rounded-2xl bg-rose-500/10 border border-rose-500/20 text-slate-700 dark:text-slate-300">
+                    <strong className="text-rose-600 dark:text-rose-400 block mb-0.5">Problem:</strong>
                     <span className="text-[11px] leading-relaxed">{project.problem}</span>
                   </div>
-                  <div className="p-3.5 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-slate-700 dark:text-slate-300">
-                    <strong className="text-emerald-600 dark:text-emerald-400 block mb-1">Solution:</strong>
+                  <div className="p-3 rounded-2xl bg-emerald-500/10 border border-emerald-500/20 text-slate-700 dark:text-slate-300">
+                    <strong className="text-emerald-600 dark:text-emerald-400 block mb-0.5">Solution:</strong>
                     <span className="text-[11px] leading-relaxed">{project.solution}</span>
                   </div>
                 </div>
 
-                {/* Tech Badges (3-5 max) */}
-                <div className="flex flex-wrap gap-1.5 pt-1">
+                {/* Tech Badges */}
+                <div className="flex flex-wrap gap-1.5 pt-0.5">
                   {project.techStack.slice(0, 4).map((tech, i) => (
                     <span
                       key={i}
-                      className="px-2.5 py-1 rounded-lg text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
+                      className="px-2.5 py-0.5 rounded-lg text-[11px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300"
                     >
                       {tech}
                     </span>
                   ))}
                 </div>
 
-                <div className="pt-2">
+                <div className="pt-1">
                   <Link
                     to={`/projects/${project.slug}`}
-                    className="inline-flex items-center gap-1.5 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-500/20 hover:scale-105 transition-all"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-500/20 hover:scale-105 transition-all"
                   >
                     <span>View Case Study</span>
                     <ArrowRight className="w-3.5 h-3.5" />
@@ -377,7 +377,7 @@ export default function HomePage() {
                 <img
                   src={project.heroImage}
                   alt={project.title}
-                  className="w-full h-64 sm:h-80 object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-56 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
             </div>
@@ -387,8 +387,8 @@ export default function HomePage() {
       </section>
 
       {/* 5. HOW I WORK (4 CONCISE STEPS) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
+      <section className="max-w-7xl mx-auto px-2 sm:px-4">
+        <div className="text-center max-w-2xl mx-auto mb-8 space-y-1.5">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-mono font-bold">
             Zero-Surprise Delivery
           </div>
@@ -396,48 +396,48 @@ export default function HomePage() {
             How I Work
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-            A battle-tested 4-step framework guaranteeing zero surprise delays or hidden costs.
+            A battle-tested 4-step framework guaranteeing zero surprise delays.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <div className="p-6 rounded-3xl glass-card hologram-border space-y-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+          <div className="p-5 rounded-3xl glass-card hologram-border space-y-2">
             <span className="font-mono text-xs font-bold text-slate-400">01</span>
-            <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white">Discover</h3>
+            <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">Discover</h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Understand your idea, business objectives, feature roadmap, and timeline.
             </p>
           </div>
 
-          <div className="p-6 rounded-3xl glass-card hologram-border space-y-3">
+          <div className="p-5 rounded-3xl glass-card hologram-border space-y-2">
             <span className="font-mono text-xs font-bold text-slate-400">02</span>
-            <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white">Design</h3>
+            <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">Design</h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
               Plan the system architecture, database contracts, and intuitive UI user flows.
             </p>
           </div>
 
-          <div className="p-6 rounded-3xl glass-card hologram-border space-y-3">
+          <div className="p-5 rounded-3xl glass-card hologram-border space-y-2">
             <span className="font-mono text-xs font-bold text-slate-400">03</span>
-            <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white">Build</h3>
+            <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">Build</h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Develop in weekly agile sprints with automated test suites and live demo staging links.
+              Develop in weekly agile sprints with automated test suites and live staging demos.
             </p>
           </div>
 
-          <div className="p-6 rounded-3xl glass-card hologram-border space-y-3">
+          <div className="p-5 rounded-3xl glass-card hologram-border space-y-2">
             <span className="font-mono text-xs font-bold text-slate-400">04</span>
-            <h3 className="font-display font-bold text-lg text-slate-900 dark:text-white">Launch</h3>
+            <h3 className="font-display font-bold text-base text-slate-900 dark:text-white">Launch</h3>
             <p className="text-xs text-slate-600 dark:text-slate-400 leading-relaxed">
-              Deploy to production, transfer complete repository ownership, and provide 30-day support.
+              Deploy to production, transfer complete repository ownership, and provide warranty.
             </p>
           </div>
         </div>
       </section>
 
       {/* 6. EDUCATION & ACADEMIC BACKGROUND */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-        <div className="text-center max-w-2xl mx-auto space-y-2">
+      <section className="max-w-7xl mx-auto px-2 sm:px-4 space-y-6">
+        <div className="text-center max-w-2xl mx-auto space-y-1.5">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 text-xs font-mono font-bold">
             <GraduationCap className="w-3.5 h-3.5" />
             Academic Foundations
@@ -450,99 +450,99 @@ export default function HomePage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
           
           {/* 1. MCA */}
-          <div className="p-6 sm:p-8 rounded-3xl glass-card hologram-border space-y-3 flex flex-col justify-between hover:border-indigo-500 transition-all">
-            <div className="space-y-2">
+          <div className="p-5 sm:p-6 rounded-3xl glass-card hologram-border space-y-2.5 flex flex-col justify-between hover:border-indigo-500 transition-all">
+            <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="font-display font-bold text-xs font-mono text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
-                  2024 – 2026
+                  2024 â€“ 2026
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-bold text-xs">
                   CGPA: 9.16 / 10
                 </span>
               </div>
-              <h3 className="font-display font-black text-lg sm:text-xl text-slate-900 dark:text-white">
+              <h3 className="font-display font-black text-base sm:text-lg text-slate-900 dark:text-white">
                 Indira College of Engineering & Management
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 Master of Computer Applications (MCA) in Computer Applications
               </p>
             </div>
-            <div className="pt-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 font-mono flex items-center gap-1.5">
+            <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-xs text-slate-500 font-mono flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-indigo-500" />
               <span>Pune, Maharashtra</span>
             </div>
           </div>
 
           {/* 2. BCA */}
-          <div className="p-6 sm:p-8 rounded-3xl glass-card hologram-border space-y-3 flex flex-col justify-between hover:border-cyan-500 transition-all">
-            <div className="space-y-2">
+          <div className="p-5 sm:p-6 rounded-3xl glass-card hologram-border space-y-2.5 flex flex-col justify-between hover:border-cyan-500 transition-all">
+            <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="font-display font-bold text-xs font-mono text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
-                  2021 – 2024
+                  2021 â€“ 2024
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-bold text-xs">
                   CGPA: 9.21 / 10
                 </span>
               </div>
-              <h3 className="font-display font-black text-lg sm:text-xl text-slate-900 dark:text-white">
+              <h3 className="font-display font-black text-base sm:text-lg text-slate-900 dark:text-white">
                 North Maharashtra University
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 Bachelor of Computer Applications (BCA) in Computer Applications
               </p>
             </div>
-            <div className="pt-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 font-mono flex items-center gap-1.5">
+            <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-xs text-slate-500 font-mono flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-cyan-500" />
               <span>Maharashtra, India</span>
             </div>
           </div>
 
           {/* 3. HSC */}
-          <div className="p-6 sm:p-8 rounded-3xl glass-card hologram-border space-y-3 flex flex-col justify-between hover:border-purple-500 transition-all">
-            <div className="space-y-2">
+          <div className="p-5 sm:p-6 rounded-3xl glass-card hologram-border space-y-2.5 flex flex-col justify-between hover:border-purple-500 transition-all">
+            <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="font-display font-bold text-xs font-mono text-purple-600 dark:text-purple-400 uppercase tracking-wider">
-                  2019 – 2021
+                  2019 â€“ 2021
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-bold text-xs">
                   Percentage: 84.40%
                 </span>
               </div>
-              <h3 className="font-display font-black text-lg sm:text-xl text-slate-900 dark:text-white">
+              <h3 className="font-display font-black text-base sm:text-lg text-slate-900 dark:text-white">
                 Maharashtra State Board
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 Higher Secondary Certificate (HSC)
               </p>
             </div>
-            <div className="pt-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 font-mono flex items-center gap-1.5">
+            <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-xs text-slate-500 font-mono flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-purple-500" />
               <span>Maharashtra, India</span>
             </div>
           </div>
 
           {/* 4. SSC */}
-          <div className="p-6 sm:p-8 rounded-3xl glass-card hologram-border space-y-3 flex flex-col justify-between hover:border-emerald-500 transition-all">
-            <div className="space-y-2">
+          <div className="p-5 sm:p-6 rounded-3xl glass-card hologram-border space-y-2.5 flex flex-col justify-between hover:border-emerald-500 transition-all">
+            <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="font-display font-bold text-xs font-mono text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
-                  June 2018 – Mar 2019
+                  June 2018 â€“ Mar 2019
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-bold text-xs">
                   Percentage: 76.60%
                 </span>
               </div>
-              <h3 className="font-display font-black text-lg sm:text-xl text-slate-900 dark:text-white">
+              <h3 className="font-display font-black text-base sm:text-lg text-slate-900 dark:text-white">
                 NMV School, Chunchale
               </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+              <p className="text-xs text-slate-600 dark:text-slate-300">
                 Secondary School Certificate (SSC) in Secondary Education
               </p>
             </div>
-            <div className="pt-3 border-t border-slate-200 dark:border-slate-800 text-xs text-slate-500 font-mono flex items-center gap-1.5">
+            <div className="pt-2 border-t border-slate-200/60 dark:border-white/5 text-xs text-slate-500 font-mono flex items-center gap-1.5">
               <MapPin className="w-3.5 h-3.5 text-emerald-500" />
               <span>Maharashtra, India</span>
             </div>
@@ -552,10 +552,10 @@ export default function HomePage() {
       </section>
 
       {/* 7. ABOUT BHUSHAN */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="p-8 sm:p-12 rounded-3xl glass-card hologram-border grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+      <section className="max-w-7xl mx-auto px-2 sm:px-4">
+        <div className="p-6 sm:p-10 rounded-3xl glass-card hologram-border grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           
-          <div className="lg:col-span-8 space-y-4">
+          <div className="lg:col-span-8 space-y-3.5">
             <span className="text-xs font-mono font-bold uppercase tracking-widest text-indigo-600 dark:text-indigo-400">
               The Developer Behind the Products
             </span>
@@ -566,15 +566,15 @@ export default function HomePage() {
               I'm a Full Stack Software Engineer focused on building modern web applications, mobile products, and AI-powered software. Currently developing scalable web and mobile applications at QLOAX LLP and taking on select freelance projects for startups worldwide.
             </p>
             <p className="text-xs text-slate-500 font-mono">
-              Based in Pune, India · MCA Graduate · Proficient in MERN Stack, React Native & AI Integrations.
+              Based in Pune, India Â· MCA Graduate Â· Proficient in MERN Stack, React Native & AI Integrations.
             </p>
 
-            <div className="flex items-center gap-3 pt-2">
+            <div className="flex items-center gap-3 pt-1">
               <a
                 href={personalInfo.github}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl glass-card hover:text-indigo-600 dark:hover:text-white transition-all text-slate-700 dark:text-slate-300"
+                className="p-2 rounded-xl glass-card hover:text-indigo-600 dark:hover:text-white transition-all text-slate-700 dark:text-slate-300"
                 title="GitHub"
               >
                 <FaGithub className="w-4 h-4" />
@@ -583,7 +583,7 @@ export default function HomePage() {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noreferrer"
-                className="p-2.5 rounded-xl glass-card hover:text-indigo-600 dark:hover:text-white transition-all text-slate-700 dark:text-slate-300"
+                className="p-2 rounded-xl glass-card hover:text-indigo-600 dark:hover:text-white transition-all text-slate-700 dark:text-slate-300"
                 title="LinkedIn"
               >
                 <FaLinkedin className="w-4 h-4" />
@@ -598,15 +598,15 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="lg:col-span-4 p-6 rounded-2xl bg-slate-100/50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center space-y-3">
-            <div className="w-16 h-16 rounded-2xl overflow-hidden mx-auto shadow-lg border border-slate-200 dark:border-white/10">
+          <div className="lg:col-span-4 p-5 rounded-2xl bg-slate-100/50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center space-y-2.5">
+            <div className="w-14 h-14 rounded-2xl overflow-hidden mx-auto shadow-lg border border-slate-200 dark:border-white/10">
               <img src={profilePhoto} alt="Bhushan Shimpi" className="w-full h-full object-cover" />
             </div>
             <div>
-              <div className="font-display font-bold text-base text-slate-900 dark:text-white">
+              <div className="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white">
                 Bhushan Shimpi
               </div>
-              <div className="text-xs text-slate-500 font-mono">
+              <div className="text-[11px] text-slate-500 font-mono">
                 Full-Stack & Mobile Engineer
               </div>
             </div>
@@ -620,32 +620,32 @@ export default function HomePage() {
       </section>
 
       {/* 8. FINAL CONVERSION CTA */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl glass-card hologram-border p-8 sm:p-14 text-center space-y-6 relative overflow-hidden shadow-2xl">
-          <div className="relative z-10 max-w-2xl mx-auto space-y-4">
-            <h2 className="font-display font-black text-2xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
+      <section className="max-w-7xl mx-auto px-2 sm:px-4">
+        <div className="rounded-3xl glass-card hologram-border p-6 sm:p-10 text-center space-y-5 relative overflow-hidden shadow-2xl">
+          <div className="relative z-10 max-w-2xl mx-auto space-y-3">
+            <h2 className="font-display font-black text-2xl sm:text-3xl text-slate-900 dark:text-white tracking-tight">
               Have a Project Idea? <span className="text-gradient">Let's Build It.</span>
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               Tell me what you're building and I'll help you turn the idea into a working product.
             </p>
-            <div className="pt-2 flex flex-wrap justify-center gap-4">
+            <div className="pt-2 flex flex-wrap justify-center gap-3">
               <Link
                 to="/contact"
-                className="px-8 py-4 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl shadow-indigo-500/25 flex items-center gap-2"
+                className="px-6 py-3.5 rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl shadow-indigo-500/25 flex items-center gap-2"
               >
                 <span>Start a Project</span>
                 <ArrowUpRight className="w-4 h-4" />
               </Link>
 
               <a
-                href="https://wa.me/919579938131?text=Hi%20Bhushan,%20I%20have%20a%20project%20idea%20to%20discuss."
+                href="https://wa.me/917020710581?text=Hi%20Bhushan,%20I%20have%20a%20project%20idea%20to%20discuss."
                 target="_blank"
                 rel="noreferrer"
-                className="px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl shadow-emerald-500/20 flex items-center gap-2"
+                className="px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl shadow-emerald-500/20 flex items-center gap-2"
               >
-                <FaWhatsapp className="w-5 h-5" />
-                <span>Chat on WhatsApp (+91 95799 38131)</span>
+                <FaWhatsapp className="w-4 h-4" />
+                <span>Chat on WhatsApp (+91 70207 10581)</span>
               </a>
             </div>
           </div>
