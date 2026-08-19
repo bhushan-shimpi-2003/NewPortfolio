@@ -1,7 +1,8 @@
 import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { projectsData } from '../data/portfolioData';
-import { ArrowLeft, CheckCircle2, Layers, Sparkles } from 'lucide-react';
+import { ArrowLeft, CheckCircle2, Layers, Sparkles, ExternalLink } from 'lucide-react';
+import { FaGithub } from 'react-icons/fa';
 import { useSound } from '../context/SoundContext';
 
 export default function ProjectDetailPage() {
@@ -26,15 +27,44 @@ export default function ProjectDetailPage() {
   return (
     <div className="w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-16 space-y-8 sm:space-y-10 overflow-x-hidden">
       
-      {/* Back button */}
-      <button
-        onClick={() => { playClick(); navigate('/projects'); }}
-        onMouseEnter={playHover}
-        className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-indigo-400 transition-colors"
-      >
-        <ArrowLeft className="w-4 h-4" />
-        Back to All Projects
-      </button>
+      {/* Top Bar: Back button + Live Actions */}
+      <div className="flex items-center justify-between gap-3">
+        <button
+          onClick={() => { playClick(); navigate('/projects'); }}
+          onMouseEnter={playHover}
+          className="inline-flex items-center gap-2 text-xs font-semibold text-slate-400 hover:text-indigo-400 transition-colors"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          <span>Back to All Projects</span>
+        </button>
+
+        <div className="flex items-center gap-2">
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={playClick}
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs shadow-md shadow-indigo-500/20 hover:scale-105 transition-all"
+            >
+              <span>Live Demo</span>
+              <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          )}
+          {project.githubUrl && (
+            <a
+              href={project.githubUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={playClick}
+              className="p-2 rounded-xl glass-card hover:border-indigo-500 text-slate-300 hover:text-white transition-all"
+              title="GitHub Repo"
+            >
+              <FaGithub className="w-4 h-4" />
+            </a>
+          )}
+        </div>
+      </div>
 
       {/* Hero Banner */}
       <div className="rounded-2xl sm:rounded-3xl glass-card overflow-hidden border border-indigo-500/30">
@@ -145,12 +175,24 @@ export default function ProjectDetailPage() {
         <p className="text-xs sm:text-sm text-slate-300 max-w-xl mx-auto leading-relaxed">
           I can architect and deploy a custom solution tailored to your exact business workflows.
         </p>
-        <div className="pt-1">
+        <div className="pt-1 flex flex-wrap justify-center gap-2.5">
+          {project.demoUrl && (
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noreferrer"
+              onClick={playClick}
+              className="px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-lg hover:scale-105 transition-all inline-flex items-center gap-1.5"
+            >
+              <span>Explore Live Product</span>
+              <ExternalLink className="w-4 h-4" />
+            </a>
+          )}
           <Link
             to="/contact"
             onMouseEnter={playHover}
             onClick={playClick}
-            className="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm shadow-lg hover:scale-105 transition-all inline-block"
+            className="px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm shadow-lg hover:scale-105 transition-all inline-block"
           >
             Start Your Project Discovery
           </Link>
