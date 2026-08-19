@@ -6,67 +6,125 @@
     font-family: 'Plus Jakarta Sans', sans-serif;
   }
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
   ::-webkit-scrollbar-track {
     background: transparent;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(99, 102, 241, 0.35);
+    background: linear-gradient(to bottom, #6366f1, #06b6d4);
     border-radius: 9999px;
   }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(99, 102, 241, 0.7);
-  }
 }
 
-.glass-card-light {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.08);
+/* Futuristic & Luxury Agency Styling */
+.cyber-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.05) 1px, transparent 1px);
 }
 
-.dark .glass-card-dark,
-.dark .glass-card {
-  background: rgba(15, 23, 42, 0.75);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(99, 102, 241, 0.25);
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6);
+.dark .cyber-grid {
+  background-image: 
+    linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+}
+
+.glow-mesh {
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.08) 0%, transparent 50%);
+}
+
+.dark .glow-mesh {
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(99, 102, 241, 0.22) 0%, transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.2) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, rgba(236, 72, 153, 0.15) 0%, transparent 50%);
+}
+
+.hologram-border {
+  position: relative;
+}
+
+.hologram-border::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.6), rgba(6, 182, 212, 0.3), rgba(236, 72, 153, 0.4));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .glass-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(226, 232, 240, 0.9);
-  box-shadow: 0 10px 30px -10px rgba(79, 70, 229, 0.08);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.08);
+}
+
+.dark .glass-card {
+  background: rgba(10, 14, 30, 0.7);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 20px 50px -15px rgba(0, 0, 0, 0.7);
 }
 
 .glass-hud {
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(226, 232, 240, 0.95);
+  border: 1px solid rgba(226, 232, 240, 0.9);
 }
 
 .dark .glass-hud {
-  background: rgba(10, 14, 30, 0.88);
+  background: rgba(8, 12, 26, 0.85);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(99, 102, 241, 0.3);
+  border: 1px solid rgba(99, 102, 241, 0.25);
 }
 
 .text-gradient {
-  background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 100%);
+  background: linear-gradient(135deg, #4f46e5 0%, #06b6d4 50%, #ec4899 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .dark .text-gradient {
-  background: linear-gradient(135deg, #818cf8 0%, #38bdf8 100%);
+  background: linear-gradient(135deg, #a5b4fc 0%, #38bdf8 50%, #f472b6 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #1e1b4b 0%, #6366f1 50%, #1e1b4b 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s infinite linear;
+}
+
+.dark .text-shimmer {
+  background: linear-gradient(90deg, #e0e7ff 0%, #818cf8 50%, #e0e7ff 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  100% { background-position: -100% 0; }
+}
+
+.badge-glow {
+  box-shadow: 0 0 20px -3px rgba(16, 185, 129, 0.4);
 }
