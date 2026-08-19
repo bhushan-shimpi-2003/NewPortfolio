@@ -7,25 +7,29 @@ export default function BackgroundCanvas() {
   const { isDark } = useTheme();
 
   return (
-    <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden">
-      <Canvas camera={{ position: [0, 0, 10], fov: 60 }} gl={{ alpha: true }}>
-        {/* Layer 1: Distant starfield */}
+    <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden bg-[#030712] dark:bg-[#030712]">
+      <Canvas camera={{ position: [0, 0, 10], fov: 60 }} gl={{ alpha: false }}>
+        {/* Deep pitch space background color */}
+        <color attach="background" args={[isDark ? "#030712" : "#f8fafc"]} />
+
+        {/* Crisp Cyan & Ice Blue Stars (Matching screenshot) */}
         <Sparkles
-          count={isDark ? 120 : 60}
-          scale={20}
-          size={isDark ? 2 : 1.5}
+          count={isDark ? 90 : 40}
+          scale={18}
+          size={isDark ? 2.5 : 2}
           speed={0.2}
-          opacity={isDark ? 0.7 : 0.3}
-          color={isDark ? "#93c5fd" : "#6366f1"}
+          opacity={isDark ? 0.85 : 0.4}
+          color={isDark ? "#38bdf8" : "#6366f1"}
         />
-        {/* Layer 2: Medium glowing cyan/indigo cosmic dust */}
+
+        {/* Faint Distant Star Specks */}
         <Sparkles
-          count={isDark ? 50 : 25}
-          scale={14}
-          size={isDark ? 3.5 : 2.5}
-          speed={0.35}
-          opacity={isDark ? 0.8 : 0.4}
-          color={isDark ? "#38bdf8" : "#818cf8"}
+          count={isDark ? 60 : 25}
+          scale={22}
+          size={isDark ? 1.5 : 1.2}
+          speed={0.15}
+          opacity={isDark ? 0.6 : 0.3}
+          color={isDark ? "#93c5fd" : "#818cf8"}
         />
       </Canvas>
     </div>

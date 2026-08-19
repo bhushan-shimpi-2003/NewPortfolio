@@ -14,7 +14,7 @@ export const ThemeProvider = ({ children }) => {
       root.classList.add('dark');
       root.classList.remove('light');
       root.setAttribute('data-theme', 'dark');
-      document.body.style.backgroundColor = '#070913';
+      document.body.style.backgroundColor = '#030712';
       document.body.style.color = '#f8fafc';
     } else {
       root.classList.remove('dark');
