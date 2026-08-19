@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
@@ -28,9 +28,9 @@ export default function HomePage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-16 space-y-16 md:space-y-20">
       
-      {/* 1. HERO SECTION (WITH PROFILE PICTURE) */}
+      {/* 1. HERO SECTION (WITH PURE ROUND PROFILE PICTURE) */}
       <section className="relative max-w-7xl mx-auto px-2 sm:px-4 pt-2 sm:pt-4">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Hero Content (7 Cols) */}
           <motion.div
@@ -59,7 +59,7 @@ export default function HomePage() {
 
             {/* Short Concise Description */}
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-lg leading-relaxed">
-              Hi, I'm <strong className="text-slate-950 dark:text-white">Bhushan Shimpi</strong>. I build modern websites, MERN applications, React Native apps and AI-powered products for startups and businesses â€” from idea to deployment.
+              Hi, I'm <strong className="text-slate-950 dark:text-white">Bhushan Shimpi</strong>. I build modern websites, MERN applications, React Native apps and AI-powered products for startups and businesses — from idea to deployment.
             </p>
 
             {/* Two Focused CTAs */}
@@ -101,52 +101,54 @@ export default function HomePage() {
 
           </motion.div>
 
-          {/* Right Hero: Profile Picture Showcase (5 Cols) */}
+          {/* Right Hero: Pure Round Profile Picture (5 Cols) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-5 relative"
+            className="lg:col-span-5 flex justify-center"
           >
-            <div className="relative rounded-3xl glass-card hologram-border p-4 shadow-2xl space-y-3 max-w-sm mx-auto">
+            <div className="relative flex flex-col items-center space-y-4 max-w-sm w-full">
               
-              {/* Profile Photo Container */}
-              <div className="relative rounded-2xl overflow-hidden aspect-square border border-slate-200 dark:border-white/10 group">
-                <img
-                  src={profilePhoto}
-                  alt="Bhushan Shimpi â€” Full Stack & Mobile Engineer"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
-                />
+              {/* Pure Round Frame Without White Corners */}
+              <div className="relative w-64 h-64 sm:w-72 sm:h-72 rounded-full p-1 bg-gradient-to-tr from-indigo-500 via-cyan-400 to-indigo-600 shadow-2xl shadow-indigo-500/25 group">
+                <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 border-2 border-white/10 relative">
+                  <img
+                    src={profilePhoto}
+                    alt="Bhushan Shimpi — Full Stack & Mobile Engineer"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                </div>
 
                 {/* Floating Tech Badge 1 */}
                 <motion.div
                   animate={{ y: [0, -5, 0] }}
                   transition={{ duration: 3.5, repeat: Infinity, ease: 'easeInOut' }}
-                  className="absolute top-3 left-3 px-3 py-1 rounded-xl bg-slate-950/80 text-white backdrop-blur-md text-[11px] font-mono font-bold flex items-center gap-1.5 shadow-lg border border-white/10"
+                  className="absolute -top-2 -left-2 px-3 py-1.5 rounded-full bg-slate-950/90 text-white backdrop-blur-md text-[11px] font-mono font-bold flex items-center gap-1.5 shadow-xl border border-white/15"
                 >
                   <Zap className="w-3.5 h-3.5 text-amber-400" />
-                  <span>âš¡ MERN Stack</span>
+                  <span>⚡ MERN Stack</span>
                 </motion.div>
 
                 {/* Floating Tech Badge 2 */}
                 <motion.div
                   animate={{ y: [0, 5, 0] }}
                   transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
-                  className="absolute bottom-3 right-3 px-3 py-1 rounded-xl bg-slate-950/80 text-white backdrop-blur-md text-[11px] font-mono font-bold flex items-center gap-1.5 shadow-lg border border-white/10"
+                  className="absolute -bottom-2 -right-2 px-3 py-1.5 rounded-full bg-slate-950/90 text-white backdrop-blur-md text-[11px] font-mono font-bold flex items-center gap-1.5 shadow-xl border border-white/15"
                 >
                   <Smartphone className="w-3.5 h-3.5 text-cyan-400" />
-                  <span>ðŸ“± React Native</span>
+                  <span>📱 React Native</span>
                 </motion.div>
               </div>
 
-              {/* Profile Meta Footer */}
-              <div className="flex items-center justify-between pt-1">
+              {/* Profile Meta Bar */}
+              <div className="flex items-center justify-between w-full max-w-[280px] px-4 py-2 rounded-2xl glass-card hologram-border">
                 <div>
-                  <h3 className="font-display font-bold text-base text-slate-950 dark:text-white">
+                  <h3 className="font-display font-bold text-sm text-slate-950 dark:text-white">
                     Bhushan Shimpi
                   </h3>
                   <p className="text-[11px] text-slate-500 font-mono">
-                    Full Stack & AI Engineer Â· Pune, India
+                    Full-Stack Engineer · Pune
                   </p>
                 </div>
                 <div className="flex items-center gap-2">
@@ -154,19 +156,19 @@ export default function HomePage() {
                     href={personalInfo.github}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 rounded-xl glass-card hover:text-indigo-600 dark:hover:text-white transition-colors text-slate-700 dark:text-slate-300"
+                    className="p-1.5 rounded-xl glass-card hover:text-indigo-600 dark:hover:text-white transition-colors text-slate-700 dark:text-slate-300"
                     title="GitHub"
                   >
-                    <FaGithub className="w-4 h-4" />
+                    <FaGithub className="w-3.5 h-3.5" />
                   </a>
                   <a
                     href={personalInfo.linkedin}
                     target="_blank"
                     rel="noreferrer"
-                    className="p-2 rounded-xl glass-card hover:text-indigo-600 dark:hover:text-white transition-colors text-slate-700 dark:text-slate-300"
+                    className="p-1.5 rounded-xl glass-card hover:text-indigo-600 dark:hover:text-white transition-colors text-slate-700 dark:text-slate-300"
                     title="LinkedIn"
                   >
-                    <FaLinkedin className="w-4 h-4" />
+                    <FaLinkedin className="w-3.5 h-3.5" />
                   </a>
                 </div>
               </div>
@@ -182,13 +184,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-wrap items-center justify-between gap-4 text-[11px] font-mono font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">
             <span>FULL STACK</span>
-            <span className="hidden sm:inline opacity-30">â€¢</span>
+            <span className="hidden sm:inline opacity-30">•</span>
             <span>MERN ARCHITECTURE</span>
-            <span className="hidden sm:inline opacity-30">â€¢</span>
+            <span className="hidden sm:inline opacity-30">•</span>
             <span>REACT NATIVE MOBILE</span>
-            <span className="hidden sm:inline opacity-30">â€¢</span>
+            <span className="hidden sm:inline opacity-30">•</span>
             <span>AI INTEGRATION</span>
-            <span className="hidden sm:inline opacity-30">â€¢</span>
+            <span className="hidden sm:inline opacity-30">•</span>
             <span>SUPABASE & POSTGRES</span>
           </div>
         </div>
@@ -230,7 +232,7 @@ export default function HomePage() {
             </div>
 
             <div className="pt-3 border-t border-slate-200/60 dark:border-white/5 text-xs font-mono text-slate-500">
-              React Â· Next.js Â· Node.js Â· Express Â· MongoDB Â· Supabase
+              React · Next.js · Node.js · Express · MongoDB · Supabase
             </div>
           </div>
 
@@ -250,7 +252,7 @@ export default function HomePage() {
             </div>
 
             <div className="pt-3 border-t border-slate-200/60 dark:border-white/5 text-xs font-mono text-slate-500">
-              React Native Â· Expo Â· iOS & Android Â· Offline Sync Â· Push APIs
+              React Native · Expo · iOS & Android · Offline Sync · Push APIs
             </div>
           </div>
 
@@ -270,7 +272,7 @@ export default function HomePage() {
             </div>
 
             <div className="pt-3 border-t border-slate-200/60 dark:border-white/5 text-xs font-mono text-slate-500">
-              LLM APIs Â· Streaming Â· ATS Scoring Â· Vector Search Â· OpenAI
+              LLM APIs · Streaming · ATS Scoring · Vector Search · OpenAI
             </div>
           </div>
 
@@ -282,7 +284,7 @@ export default function HomePage() {
             to="/contact"
             className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline"
           >
-            <span>Need a project estimate? â†’ Start a Project</span>
+            <span>Need a project estimate? → Start a Project</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -457,7 +459,7 @@ export default function HomePage() {
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="font-display font-bold text-xs font-mono text-indigo-600 dark:text-indigo-400 uppercase tracking-wider">
-                  2024 â€“ 2026
+                  2024 – 2026
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-bold text-xs">
                   CGPA: 9.16 / 10
@@ -466,7 +468,7 @@ export default function HomePage() {
               <h3 className="font-display font-black text-base sm:text-lg text-slate-900 dark:text-white">
                 Indira College of Engineering & Management
               </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                 Master of Computer Applications (MCA) in Computer Applications
               </p>
             </div>
@@ -481,7 +483,7 @@ export default function HomePage() {
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="font-display font-bold text-xs font-mono text-cyan-600 dark:text-cyan-400 uppercase tracking-wider">
-                  2021 â€“ 2024
+                  2021 – 2024
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-bold text-xs">
                   CGPA: 9.21 / 10
@@ -490,7 +492,7 @@ export default function HomePage() {
               <h3 className="font-display font-black text-base sm:text-lg text-slate-900 dark:text-white">
                 North Maharashtra University
               </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                 Bachelor of Computer Applications (BCA) in Computer Applications
               </p>
             </div>
@@ -505,7 +507,7 @@ export default function HomePage() {
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="font-display font-bold text-xs font-mono text-purple-600 dark:text-purple-400 uppercase tracking-wider">
-                  2019 â€“ 2021
+                  2019 – 2021
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-bold text-xs">
                   Percentage: 84.40%
@@ -514,7 +516,7 @@ export default function HomePage() {
               <h3 className="font-display font-black text-base sm:text-lg text-slate-900 dark:text-white">
                 Maharashtra State Board
               </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                 Higher Secondary Certificate (HSC)
               </p>
             </div>
@@ -529,7 +531,7 @@ export default function HomePage() {
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <span className="font-display font-bold text-xs font-mono text-emerald-600 dark:text-emerald-400 uppercase tracking-wider">
-                  June 2018 â€“ Mar 2019
+                  June 2018 – Mar 2019
                 </span>
                 <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-mono font-bold text-xs">
                   Percentage: 76.60%
@@ -538,7 +540,7 @@ export default function HomePage() {
               <h3 className="font-display font-black text-base sm:text-lg text-slate-900 dark:text-white">
                 NMV School, Chunchale
               </h3>
-              <p className="text-xs text-slate-600 dark:text-slate-300">
+              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                 Secondary School Certificate (SSC) in Secondary Education
               </p>
             </div>
@@ -566,7 +568,7 @@ export default function HomePage() {
               I'm a Full Stack Software Engineer focused on building modern web applications, mobile products, and AI-powered software. Currently developing scalable web and mobile applications at QLOAX LLP and taking on select freelance projects for startups worldwide.
             </p>
             <p className="text-xs text-slate-500 font-mono">
-              Based in Pune, India Â· MCA Graduate Â· Proficient in MERN Stack, React Native & AI Integrations.
+              Based in Pune, India · MCA Graduate · Proficient in MERN Stack, React Native & AI Integrations.
             </p>
 
             <div className="flex items-center gap-3 pt-1">
@@ -599,7 +601,7 @@ export default function HomePage() {
           </div>
 
           <div className="lg:col-span-4 p-5 rounded-2xl bg-slate-100/50 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-center space-y-2.5">
-            <div className="w-14 h-14 rounded-2xl overflow-hidden mx-auto shadow-lg border border-slate-200 dark:border-white/10">
+            <div className="w-16 h-16 rounded-full overflow-hidden mx-auto shadow-lg border-2 border-indigo-500/40">
               <img src={profilePhoto} alt="Bhushan Shimpi" className="w-full h-full object-cover" />
             </div>
             <div>
