@@ -138,7 +138,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 3. WHAT I BUILD (3 PRIMARY SERVICES) */}
+      {/* 3. WHAT I BUILD (3 PRIMARY SERVICES - NO PRICING CLUTTER) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -161,12 +161,7 @@ export default function HomePage() {
           {/* 01 Web Applications */}
           <div className="p-8 rounded-3xl glass-card hologram-border space-y-5 flex flex-col justify-between hover:border-indigo-500 transition-all group">
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-bold text-slate-400">01</span>
-                <span className="text-xs font-mono text-indigo-600 dark:text-indigo-400 font-bold px-2.5 py-0.5 rounded-full bg-indigo-500/10">
-                  From ₹35,000
-                </span>
-              </div>
+              <span className="font-mono text-xs font-bold text-slate-400">01</span>
               <div className="p-3 w-fit rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
                 <Globe className="w-6 h-6" />
               </div>
@@ -186,12 +181,7 @@ export default function HomePage() {
           {/* 02 Mobile Applications */}
           <div className="p-8 rounded-3xl glass-card hologram-border space-y-5 flex flex-col justify-between hover:border-cyan-500 transition-all group">
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-bold text-slate-400">02</span>
-                <span className="text-xs font-mono text-cyan-600 dark:text-cyan-400 font-bold px-2.5 py-0.5 rounded-full bg-cyan-500/10">
-                  From ₹40,000
-                </span>
-              </div>
+              <span className="font-mono text-xs font-bold text-slate-400">02</span>
               <div className="p-3 w-fit rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400">
                 <Smartphone className="w-6 h-6" />
               </div>
@@ -211,12 +201,7 @@ export default function HomePage() {
           {/* 03 AI Applications */}
           <div className="p-8 rounded-3xl glass-card hologram-border space-y-5 flex flex-col justify-between hover:border-emerald-500 transition-all group">
             <div className="space-y-4">
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-bold text-slate-400">03</span>
-                <span className="text-xs font-mono text-emerald-600 dark:text-emerald-400 font-bold px-2.5 py-0.5 rounded-full bg-emerald-500/10">
-                  From ₹25,000
-                </span>
-              </div>
+              <span className="font-mono text-xs font-bold text-slate-400">03</span>
               <div className="p-3 w-fit rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
                 <Cpu className="w-6 h-6" />
               </div>
@@ -235,13 +220,13 @@ export default function HomePage() {
 
         </div>
 
-        {/* Link to full pricing/services page */}
+        {/* Clean CTA to Project Inquiry / Services */}
         <div className="text-center pt-8">
           <Link
-            to="/services"
+            to="/contact"
             className="inline-flex items-center gap-2 text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline"
           >
-            <span>Need a custom project estimate? Calculate Scope & Pricing on Services Page</span>
+            <span>Need a project estimate? → Start a Project</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -308,7 +293,7 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Tech Badges */}
+                {/* Tech Badges (3-5 max) */}
                 <div className="flex flex-wrap gap-1.5 pt-1">
                   {project.techStack.slice(0, 4).map((tech, i) => (
                     <span
