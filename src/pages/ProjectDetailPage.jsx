@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { projectsData } from '../data/portfolioData';
 import { ArrowLeft, CheckCircle2, Layers, Sparkles } from 'lucide-react';

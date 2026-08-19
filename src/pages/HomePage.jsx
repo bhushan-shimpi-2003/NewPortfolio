@@ -45,7 +45,7 @@ export default function HomePage() {
   const currentProject = projectsData[activeProjectTab] || projectsData[0];
 
   return (
-    <div className="space-y-24 md:space-y-36 pb-20 pt-20 md:pt-24 cyber-grid-bg radial-glow">
+    <div className="space-y-24 md:space-y-36 pb-20 pt-20 md:pt-24 cosmic-bg">
       
       {/* 1. HERO SECTION */}
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-8">

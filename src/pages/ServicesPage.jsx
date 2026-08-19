@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { Globe, Smartphone, Sparkles, ShieldCheck, CheckCircle2, ArrowRight, HelpCircle, Layers, Zap } from 'lucide-react';
 import { freelanceServices, freelanceFaqs } from '../data/servicesData';
 import ProjectEstimator from '../components/freelance/ProjectEstimator';
@@ -17,7 +17,7 @@ export default function ServicesPage() {
   const { playHover, playClick } = useSound();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-24 cyber-grid glow-mesh">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-24 cosmic-bg">
       
       {/* Header */}
       <section className="text-center max-w-3xl mx-auto space-y-4 pt-6">

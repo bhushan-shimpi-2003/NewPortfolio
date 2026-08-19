@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { personalInfo, experienceData, educationData, certificationsData, skillsData } from '../data/portfolioData';
 import TechOrbit3D from '../components/3d/TechOrbit3D';
 import AvailabilityBadge from '../components/freelance/AvailabilityBadge';
@@ -9,7 +9,7 @@ export default function AboutPage() {
   const { playHover, playClick } = useSound();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-24 cyber-grid glow-mesh">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-24 cosmic-bg">
       
       {/* 1. Header & Story */}
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-6">
@@ -30,7 +30,7 @@ export default function AboutPage() {
             </div>
             <div className="flex items-center gap-2 p-3 rounded-2xl glass-card">
               <GraduationCap className="w-4 h-4 text-brand-500 shrink-0" />
-              <span>MCA (9.16 CGPA) • BCA (9.21 CGPA)</span>
+              <span>MCA (9.16 CGPA) â€¢ BCA (9.21 CGPA)</span>
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function AboutPage() {
         <div className="lg:col-span-5 rounded-3xl glass-card hologram-border p-4 relative overflow-hidden shadow-2xl">
           <div className="text-center mb-1">
             <span className="text-[11px] font-mono text-brand-600 dark:text-brand-400 font-bold">
-              ✨ Interactive 3D Skill Constellation
+              âœ¨ Interactive 3D Skill Constellation
             </span>
           </div>
           <TechOrbit3D />
@@ -98,7 +98,7 @@ export default function AboutPage() {
                     {exp.role}
                   </h3>
                   <p className="text-xs text-brand-600 dark:text-brand-400 font-bold font-mono">
-                    {exp.company} • {exp.location}
+                    {exp.company} â€¢ {exp.location}
                   </p>
                 </div>
                 <span className="px-3.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 text-xs font-mono font-semibold self-start">

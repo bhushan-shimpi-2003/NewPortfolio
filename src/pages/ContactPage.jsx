@@ -40,7 +40,7 @@ export default function ContactPage() {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-16 cyber-grid glow-mesh">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-16 cosmic-bg">
       
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto space-y-4 pt-6">
