@@ -17,7 +17,7 @@ export default function ServicesPage() {
   const { playHover, playClick } = useSound();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-24 cosmic-bg">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-24 ">
       
       {/* Header */}
       <section className="text-center max-w-3xl mx-auto space-y-4 pt-6">

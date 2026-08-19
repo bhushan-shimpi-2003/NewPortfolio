@@ -26,7 +26,7 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="space-y-24 md:space-y-36 pb-20 pt-20 md:pt-24 cosmic-bg">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-28 pb-20 space-y-24 md:space-y-32">
       
       {/* 1. HERO SECTION */}
       <section className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-4 sm:pt-8">

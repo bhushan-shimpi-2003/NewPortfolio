@@ -9,7 +9,7 @@ export default function AboutPage() {
   const { playHover, playClick } = useSound();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-24 cosmic-bg">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-24 ">
       
       {/* 1. Header & Story */}
       <section className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-6">
