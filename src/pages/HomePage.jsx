@@ -180,20 +180,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. MINIMAL PROOF STRIP */}
-      <section className="w-full border-y border-white/5 py-3.5 bg-slate-900/40 backdrop-blur-md -mx-4 sm:-mx-6 lg:-mx-8 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-center sm:justify-between gap-x-4 gap-y-2 text-[10px] sm:text-[11px] font-mono font-bold text-slate-400 uppercase tracking-wider text-center">
-          <span>FULL STACK</span>
-          <span className="opacity-30">•</span>
-          <span>MERN ARCHITECTURE</span>
-          <span className="opacity-30">•</span>
-          <span>REACT NATIVE MOBILE</span>
-          <span className="opacity-30">•</span>
-          <span>AI INTEGRATION</span>
-          <span className="opacity-30 hidden sm:inline">•</span>
-          <span className="hidden sm:inline">SUPABASE & POSTGRES</span>
-        </div>
-      </section>
 
       {/* 3. WHAT I BUILD (3 PRIMARY SERVICES) */}
       <section className="w-full">
