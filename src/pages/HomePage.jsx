@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ArrowRight, Sparkles, CheckCircle2, Globe, Smartphone, Server, ShieldCheck, 
-  Code2, Terminal, Cpu, Zap, ExternalLink, ChevronRight, Layers, Database, Lock, Clock
+  Code2, Terminal, Cpu, Zap, ExternalLink, ChevronRight, Layers, Database, Lock, Clock, Phone
 } from 'lucide-react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaWhatsapp, FaGithub, FaLinkedin } from 'react-icons/fa';
 import HeroScene3D from '../components/3d/HeroScene3D';
 import AvailabilityBadge from '../components/freelance/AvailabilityBadge';
 import ProjectEstimator from '../components/freelance/ProjectEstimator';
@@ -18,7 +18,7 @@ export default function HomePage() {
   const { playClick, playHover } = useSound();
   const [activeProjectTab, setActiveProjectTab] = useState(0);
   const [puneTime, setPuneTime] = useState('');
-  const [aiPromptTest, setAiPromptTest] = useState('Generate ATS score for Senior MERN Developer resume');
+  const [aiPromptTest, setAiPromptTest] = useState('Calculate ATS score for Senior MERN Developer');
   const [aiOutput, setAiOutput] = useState('✨ ATS Match: 98% • Key Keywords Detected: React.js, React Native, Node.js, Supabase, PostgreSQL, AI APIs.');
   const [isAiGenerating, setIsAiGenerating] = useState(false);
 
@@ -60,65 +60,66 @@ export default function HomePage() {
           >
             {/* Top Bar: Availability + Location Time */}
             <div className="flex flex-wrap items-center gap-3">
-              <AvailabilityBadge />
+              <AvailabilityBadge text="🟢 Available for Indian & Global Freelance Projects" />
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full glass-card text-xs font-mono text-slate-600 dark:text-slate-400">
                 <Clock className="w-3 h-3 text-brand-500" />
-                <span>Pune, IN: <strong className="text-slate-900 dark:text-white">{puneTime || 'IST'}</strong></span>
+                <span>Pune (IST): <strong className="text-slate-900 dark:text-white">{puneTime || 'IST'}</strong></span>
               </div>
             </div>
 
             {/* Massive Heading */}
             <h1 className="font-display font-extrabold text-3xl sm:text-5xl lg:text-6xl text-slate-900 dark:text-white tracking-tight leading-[1.08]">
-              Architecting <br />
+              Engineering High-ROI <br />
               <span className="text-gradient">Web, Mobile & AI</span> <br />
-              Products That Scale.
+              Apps For Indian Startups.
             </h1>
 
             {/* Subtext */}
             <p className="text-sm sm:text-base text-slate-600 dark:text-slate-300 max-w-xl leading-relaxed">
-              I am <span className="font-bold text-slate-900 dark:text-white">Bhushan Shimpi</span>, a Full-Stack Software Engineer & Freelance Architect. I build high-ROI MERN SaaS portals, React Native mobile apps, and custom AI engines for startups & forward-thinking founders.
+              Hi, I'm <span className="font-bold text-slate-900 dark:text-white">Bhushan Shimpi</span>, Full-Stack Software Engineer & Freelancer based in Pune, India. I build production MERN SaaS portals, React Native mobile apps, and custom AI engines with fast delivery cycles and transparent milestone pricing in INR (₹).
             </p>
 
             {/* Value Points Pill Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-slate-700 dark:text-slate-300 pt-1">
-              <div className="flex items-center gap-2 p-2 rounded-xl glass-card">
+              <div className="flex items-center gap-2 p-2.5 rounded-xl glass-card">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span><strong>100% Code Ownership</strong> & IP Transfer</span>
+                <span><strong>100% Code Ownership</strong> & Repository Transfer</span>
               </div>
-              <div className="flex items-center gap-2 p-2 rounded-xl glass-card">
+              <div className="flex items-center gap-2 p-2.5 rounded-xl glass-card">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
                 <span><strong>MERN + React Native</strong> Unified Backend</span>
               </div>
-              <div className="flex items-center gap-2 p-2 rounded-xl glass-card">
+              <div className="flex items-center gap-2 p-2.5 rounded-xl glass-card">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span><strong>Weekly Agile Demos</strong> on live staging</span>
+                <span><strong>Weekly Live Staging Demos</strong> on Vercel</span>
               </div>
-              <div className="flex items-center gap-2 p-2 rounded-xl glass-card">
+              <div className="flex items-center gap-2 p-2.5 rounded-xl glass-card">
                 <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span><strong>30-Day Launch Warranty</strong> included</span>
+                <span><strong>30-Day Launch Warranty</strong> & Support</span>
               </div>
             </div>
 
             {/* Action Bar */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-3.5 pt-2">
+              <a
+                href="https://wa.me/919579938131?text=Hi%20Bhushan,%20I%20am%20looking%20to%20build%20a%20web/mobile%20project."
+                target="_blank"
+                rel="noreferrer"
+                className="px-6 py-3.5 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm shadow-xl shadow-emerald-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
+              >
+                <FaWhatsapp className="w-4 h-4" />
+                <span>Chat on WhatsApp</span>
+              </a>
+
               <Link
                 to="/services"
                 onMouseEnter={playHover}
                 onClick={playClick}
-                className="px-7 py-4 rounded-2xl bg-gradient-to-r from-brand-600 via-indigo-600 to-cyanBrand-500 text-white font-bold text-xs sm:text-sm shadow-xl shadow-brand-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2.5"
+                className="px-6 py-3.5 rounded-2xl bg-gradient-to-r from-brand-600 via-indigo-600 to-cyanBrand-500 text-white font-bold text-xs sm:text-sm shadow-xl shadow-brand-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
               >
                 <Zap className="w-4 h-4" />
-                <span>Estimate Your Project</span>
+                <span>Estimate Scope (₹ INR)</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
-              <Link
-                to="/contact"
-                onMouseEnter={playHover}
-                onClick={playClick}
-                className="px-7 py-4 rounded-2xl glass-card text-slate-900 dark:text-white font-semibold text-xs sm:text-sm hover:border-brand-500 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
-              >
-                <span>Book 30-Min Call</span>
-                <ExternalLink className="w-4 h-4 text-slate-400" />
               </Link>
             </div>
 
@@ -149,7 +150,7 @@ export default function HomePage() {
               <HeroScene3D />
               <div className="absolute top-4 left-4 right-4 flex items-center justify-between text-[11px] font-mono text-slate-600 dark:text-slate-400">
                 <span className="flex items-center gap-1.5 bg-slate-900/70 text-cyan-300 px-2.5 py-1 rounded-full backdrop-blur-md">
-                  <Sparkles className="w-3 h-3 text-cyan-400" /> 3D Quantum Canvas
+                  <Sparkles className="w-3 h-3 text-cyan-400" /> 3D Interactive World
                 </span>
                 <span className="bg-slate-900/70 text-slate-300 px-2.5 py-1 rounded-full backdrop-blur-md">
                   WebGL 60 FPS
@@ -168,13 +169,13 @@ export default function HomePage() {
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400 text-xs font-mono font-bold">
             <Layers className="w-3.5 h-3.5" />
-            End-To-End Capabilities
+            End-To-End Engineering Services
           </div>
           <h2 className="font-display font-bold text-3xl sm:text-4xl text-slate-900 dark:text-white">
-            Engineered For Startups & Scaleups
+            Built For High-Growth Businesses
           </h2>
           <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
-            No cookie-cutter templates. Every system is built from scratch with custom architecture, clean TypeScript, and automated testing.
+            From Figma wireframes to production cloud deployment, I build modern web and mobile apps with clean code and zero agency fluff.
           </p>
         </div>
 
@@ -189,7 +190,7 @@ export default function HomePage() {
                   <Globe className="w-6 h-6" />
                 </div>
                 <span className="font-mono text-xs text-brand-600 dark:text-brand-400 font-bold px-3 py-1 rounded-full bg-brand-500/10">
-                  Full-Stack MERN & Next.js
+                  Starting from ₹35,000
                 </span>
               </div>
 
@@ -218,9 +219,9 @@ export default function HomePage() {
             </div>
 
             <div className="pt-6 mt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
-              <span className="text-xs font-mono text-slate-500">Includes Stripe/Razorpay + Vercel CI/CD</span>
+              <span className="text-xs font-mono text-slate-500">Includes Razorpay/Cashfree + Vercel CI/CD</span>
               <Link to="/services" className="text-xs font-bold text-brand-600 dark:text-brand-400 flex items-center gap-1 hover:underline">
-                View Specs <ArrowRight className="w-3.5 h-3.5" />
+                View Pricing <ArrowRight className="w-3.5 h-3.5" />
               </Link>
             </div>
           </div>
@@ -228,11 +229,16 @@ export default function HomePage() {
           {/* Bento 2: Cross-Platform Mobile (4 Cols) */}
           <div className="md:col-span-4 rounded-3xl glass-card p-6 sm:p-8 flex flex-col justify-between hover:border-cyan-500 transition-all group">
             <div className="space-y-4">
-              <div className="p-3 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-bold inline-block">
-                <Smartphone className="w-6 h-6" />
+              <div className="flex items-center justify-between">
+                <div className="p-3 rounded-2xl bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-bold inline-block">
+                  <Smartphone className="w-6 h-6" />
+                </div>
+                <span className="font-mono text-xs text-cyan-600 dark:text-cyan-400 font-bold px-3 py-1 rounded-full bg-cyan-500/10">
+                  From ₹40,000
+                </span>
               </div>
               <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white">
-                React Native iOS & Android Apps
+                React Native Android & iOS Apps
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
                 60 FPS native animations, offline caching, push alerts, and single-codebase velocity with Expo EAS.
@@ -244,8 +250,8 @@ export default function HomePage() {
                   <span className="text-emerald-500 font-bold">100% Code Reuse</span>
                 </div>
                 <div className="flex items-center justify-between font-mono">
-                  <span className="text-slate-500">App Store Ready</span>
-                  <span className="text-brand-500 font-bold">iOS + Android</span>
+                  <span className="text-slate-500">Store Ready</span>
+                  <span className="text-brand-500 font-bold">Play Store + iOS</span>
                 </div>
               </div>
             </div>
@@ -264,13 +270,13 @@ export default function HomePage() {
                 <Cpu className="w-6 h-6" />
               </div>
               <span className="text-xs font-mono px-3 py-1 rounded-full bg-purple-500/10 text-purple-600 dark:text-purple-400 font-bold">
-                AI / LLM Integration
+                From ₹25,000
               </span>
             </div>
 
             <div>
               <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white">
-                Interactive AI Systems & ATS Scoring
+                AI Integration & Automated Workflows
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
                 Custom prompt pipelines, streaming evaluations, semantic search, and automated structured data parsers.
@@ -309,16 +315,16 @@ export default function HomePage() {
                   <ShieldCheck className="w-6 h-6" />
                 </div>
                 <span className="text-xs font-mono px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold">
-                  Enterprise Portals
+                  From ₹50,000
                 </span>
               </div>
 
               <div>
                 <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white">
-                  Enterprise ERPs, RBAC & Telemetry
+                  Enterprise ERPs, School & Hospital Portals
                 </h3>
                 <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-1">
-                  Built for Schools, Clinics, and Institutions with multi-role permissions (Admin, HR, Candidate, Doctor), automated invoicing, and Playwright QA.
+                  Built for Schools, Clinics, and Institutes with multi-role permissions (Admin, Staff, Student, Doctor), automated invoicing, and WhatsApp notifications.
                 </p>
               </div>
 
@@ -507,24 +513,26 @@ export default function HomePage() {
               Ready to Turn Your Idea Into a Scalable App?
             </h2>
             <p className="text-xs sm:text-sm text-indigo-100 leading-relaxed">
-              Let's build your Web SaaS, React Native mobile app, or AI tool. Book a free 30-minute discovery call or send over your project brief.
+              Let's build your Web SaaS, React Native mobile app, or AI tool. Connect on WhatsApp or book a discovery call.
             </p>
             <div className="pt-2 flex flex-wrap justify-center gap-4">
-              <Link
-                to="/contact"
-                onMouseEnter={playHover}
-                onClick={playClick}
-                className="px-8 py-4 rounded-2xl bg-white text-slate-900 font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl"
+              <a
+                href="https://wa.me/919579938131?text=Hi%20Bhushan,%20let%27s%20discuss%20a%20project."
+                target="_blank"
+                rel="noreferrer"
+                className="px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl flex items-center gap-2"
               >
-                Schedule Free Discovery Call
-              </Link>
+                <FaWhatsapp className="w-5 h-5" />
+                <span>Chat on WhatsApp (+91 95799 38131)</span>
+              </a>
+
               <Link
                 to="/services"
                 onMouseEnter={playHover}
                 onClick={playClick}
                 className="px-8 py-4 rounded-2xl bg-brand-900/50 border border-white/30 text-white font-semibold text-xs sm:text-sm hover:bg-brand-900/80 transition-all"
               >
-                Calculate Project Cost
+                Calculate Project Cost (₹ INR)
               </Link>
             </div>
           </div>

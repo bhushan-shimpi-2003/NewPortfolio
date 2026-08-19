@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+﻿import React, { useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -7,8 +7,6 @@ import { SoundProvider } from './context/SoundContext';
 
 import Navbar from './components/common/Navbar';
 import Footer from './components/common/Footer';
-import CustomCursor from './components/common/CustomCursor';
-import CommandPalette from './components/common/CommandPalette';
 import BackgroundCanvas from './components/3d/BackgroundCanvas';
 
 import HomePage from './pages/HomePage';
@@ -57,25 +55,15 @@ function AnimatedRoutes() {
 }
 
 export default function App() {
-  const [isCommandPaletteOpen, setIsCommandPaletteOpen] = useState(false);
-
   return (
     <ThemeProvider>
       <SoundProvider>
         <BrowserRouter>
           <div className="relative min-h-screen overflow-x-hidden selection:bg-brand-500 selection:text-white">
             <ScrollToTop />
-            <CustomCursor />
             <BackgroundCanvas />
-            
-            <Navbar onOpenCommandPalette={() => setIsCommandPaletteOpen(true)} />
-            
+            <Navbar />
             <AnimatedRoutes />
-
-            <CommandPalette
-              isOpen={isCommandPaletteOpen}
-              onClose={() => setIsCommandPaletteOpen(false)}
-            />
           </div>
         </BrowserRouter>
       </SoundProvider>
