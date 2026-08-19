@@ -28,7 +28,7 @@ export default function HomePage() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-16 space-y-12 sm:space-y-16 md:space-y-20 overflow-x-hidden">
       
-      {/* 1. HERO SECTION (IMAGE AT TOP ON MOBILE) */}
+      {/* 1. HERO SECTION */}
       <section className="relative w-full pt-2 sm:pt-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
@@ -137,24 +137,24 @@ export default function HomePage() {
               Hi, I'm <strong className="text-white">Bhushan Shimpi</strong>. I build modern websites, MERN applications, React Native apps and AI-powered products for startups and businesses — from idea to deployment.
             </p>
 
-            {/* Two Focused CTAs */}
-            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
+            {/* Two Focused CTAs — One Single Line on Mobile */}
+            <div className="grid grid-cols-2 gap-2.5 sm:flex sm:flex-row sm:items-center sm:gap-3 pt-1">
               <Link
                 to="/contact"
                 onMouseEnter={playHover}
                 onClick={playClick}
-                className="w-full sm:w-auto text-center justify-center px-5 sm:px-6 py-3 rounded-xl sm:rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm shadow-lg shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
+                className="w-full sm:w-auto text-center justify-center px-3 sm:px-6 py-3 rounded-xl sm:rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm shadow-lg shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"
               >
                 <span>Start a Project</span>
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" />
               </Link>
 
               <a
                 href="#work"
-                className="w-full sm:w-auto text-center justify-center px-5 sm:px-6 py-3 rounded-xl sm:rounded-2xl glass-card text-slate-200 font-semibold text-xs sm:text-sm hover:border-indigo-500 transition-all flex items-center gap-2"
+                className="w-full sm:w-auto text-center justify-center px-3 sm:px-6 py-3 rounded-xl sm:rounded-2xl glass-card text-slate-200 font-semibold text-xs sm:text-sm hover:border-indigo-500 transition-all flex items-center gap-1.5 sm:gap-2 whitespace-nowrap"
               >
                 <span>View My Work</span>
-                <ArrowDown className="w-3.5 h-3.5" />
+                <ArrowDown className="w-3.5 h-3.5 shrink-0" />
               </a>
             </div>
 
@@ -629,10 +629,10 @@ export default function HomePage() {
             <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
               Tell me what you're building and I'll help you turn the idea into a working product.
             </p>
-            <div className="pt-2 flex flex-col sm:flex-row justify-center gap-2.5 sm:gap-3">
+            <div className="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-w-md mx-auto">
               <Link
                 to="/contact"
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl shadow-indigo-500/25 flex items-center justify-center gap-2"
+                className="w-full px-4 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl shadow-indigo-500/25 flex items-center justify-center gap-1.5"
               >
                 <span>Start a Project</span>
                 <ArrowUpRight className="w-4 h-4" />
@@ -642,10 +642,10 @@ export default function HomePage() {
                 href="https://wa.me/917020710581?text=Hi%20Bhushan,%20I%20have%20a%20project%20idea%20to%20discuss."
                 target="_blank"
                 rel="noreferrer"
-                className="w-full sm:w-auto px-6 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-2"
+                className="w-full px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl shadow-emerald-500/20 flex items-center justify-center gap-1.5 whitespace-nowrap"
               >
                 <FaWhatsapp className="w-4 h-4" />
-                <span>Chat on WhatsApp (+91 70207 10581)</span>
+                <span>Chat on WhatsApp</span>
               </a>
             </div>
           </div>
