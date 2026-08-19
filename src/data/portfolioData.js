@@ -104,8 +104,8 @@ export const skillsData = {
 
 export const projectsData = [
   {
-    slug: "intervu-ai",
-    title: "InterVu AI",
+    slug: "talentiq",
+    title: "TalentIQ",
     tagline: "AI-Powered Real-Time Interview Simulation & ATS Analytics Platform",
     category: "AI & Full-Stack Web + Mobile",
     featured: true,
@@ -118,7 +118,7 @@ export const projectsData = [
       { label: "Feedback Latency", value: "< 1.2s" },
       { label: "User Roles", value: "Candidate & Admin" }
     ],
-    overview: "InterVu AI is an enterprise-grade AI mock interview system designed to train technical and behavioral candidates with instantaneous constructive critiques, tone analysis, and deep resume ATS compatibility parsing.",
+    overview: "TalentIQ is an enterprise-grade AI mock interview system designed to train technical and behavioral candidates with instantaneous constructive critiques, tone analysis, and deep resume ATS compatibility parsing.",
     problem: "Candidates struggle with realistic interview preparation, high recruitment costs for mock evaluations, and lack actionable data on why resumes fail automated ATS screenings.",
     solution: "Built a reactive web dashboard in React.js and a companion mobile app in React Native backed by high-speed Node/Express micro-endpoints, Supabase PostgreSQL, and modern AI language model APIs that stream real-time evaluations and generate customized improvement roadmaps.",
     architecture: [
