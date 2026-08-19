@@ -1,12 +1,10 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sun, Moon, Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
-import { useTheme } from '../../context/ThemeContext';
 
 export default function Navbar() {
-  const { toggleTheme, isDark } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -47,15 +45,15 @@ export default function Navbar() {
               BS
             </div>
             <div className="flex items-center gap-2">
-              <span className="font-display font-bold text-sm sm:text-base text-slate-900 dark:text-white tracking-tight">
+              <span className="font-display font-bold text-sm sm:text-base text-white tracking-tight">
                 Bhushan Shimpi
               </span>
               <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse" title="Available for projects"></span>
             </div>
           </Link>
 
-          {/* Desktop Nav Items (With Home Tab) */}
-          <nav className="hidden md:flex items-center gap-1 bg-slate-100/60 dark:bg-slate-900/60 p-1 rounded-xl border border-slate-200/60 dark:border-white/10 backdrop-blur-xl">
+          {/* Desktop Nav Items */}
+          <nav className="hidden md:flex items-center gap-1 bg-slate-900/60 p-1 rounded-xl border border-white/10 backdrop-blur-xl">
             {navLinks.map((link) => (
               <NavLink
                 key={link.path}
@@ -63,8 +61,8 @@ export default function Navbar() {
                 className={({ isActive }) =>
                   `px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 ${
                     isActive
-                      ? 'bg-white dark:bg-slate-800 text-indigo-600 dark:text-indigo-400 shadow-sm font-bold'
-                      : 'text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-white hover:bg-white/40 dark:hover:bg-white/5'
+                      ? 'bg-slate-800 text-indigo-400 shadow-sm font-bold'
+                      : 'text-slate-300 hover:text-white hover:bg-white/5'
                   }`
                 }
               >
@@ -76,15 +74,6 @@ export default function Navbar() {
           {/* Right Action Icons */}
           <div className="flex items-center gap-2">
             
-            {/* Theme Toggle (Light/Dark) */}
-            <button
-              onClick={toggleTheme}
-              title={isDark ? "Switch to Light Mode" : "Switch to Dark Mode"}
-              className="p-2 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-200/70 dark:hover:bg-slate-800/80 transition-colors border border-slate-200/80 dark:border-slate-700/80"
-            >
-              {isDark ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-600" />}
-            </button>
-
             {/* Direct WhatsApp CTA Button */}
             <a
               href="https://wa.me/917020710581?text=Hi%20Bhushan,%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project."
@@ -108,7 +97,7 @@ export default function Navbar() {
             {/* Mobile Hamburger Menu Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="md:hidden p-2 rounded-xl text-slate-700 dark:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800/80"
+              className="md:hidden p-2 rounded-xl text-slate-200 hover:bg-slate-800/80"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -123,7 +112,7 @@ export default function Navbar() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden mt-3 pt-3 border-t border-slate-200 dark:border-slate-700 overflow-hidden"
+              className="md:hidden mt-3 pt-3 border-t border-slate-700 overflow-hidden"
             >
               <div className="flex flex-col gap-1 pb-2">
                 {navLinks.map((link) => (
@@ -134,8 +123,8 @@ export default function Navbar() {
                     className={({ isActive }) =>
                       `px-3.5 py-2 rounded-xl text-sm font-semibold transition-colors ${
                         isActive
-                          ? 'bg-indigo-500/15 text-indigo-600 dark:text-indigo-400 font-bold'
-                          : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
+                          ? 'bg-indigo-500/15 text-indigo-400 font-bold'
+                          : 'text-slate-300 hover:bg-slate-800'
                       }`
                     }
                   >
@@ -158,7 +147,7 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="text-center py-2.5 rounded-xl bg-indigo-600 text-white font-bold text-xs shadow-md"
                 >
-                  Let's Talk â†—
+                  Let's Talk ↗
                 </Link>
               </div>
             </motion.div>
