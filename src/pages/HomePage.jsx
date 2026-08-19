@@ -130,7 +130,7 @@ export default function HomePage() {
                   <div className="font-display font-black text-lg sm:text-xl text-slate-900 dark:text-white">
                     {m.value}
                   </div>
-                  <div className="text-[11px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">
+                  <div className="text-[10px] text-slate-500 dark:text-slate-400 leading-tight mt-0.5">
                     {m.label}
                   </div>
                 </div>
@@ -503,14 +503,18 @@ export default function HomePage() {
         <ProcessRoadmap />
       </section>
 
-      {/* 6. CALL TO ACTION BANNER */}
+      {/* 6. REDESIGNED SLEEK CTA BANNER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl bg-gradient-to-tr from-indigo-700 via-indigo-600 to-cyan-600 p-8 sm:p-14 text-white text-center space-y-6 relative overflow-hidden shadow-2xl">
+        <div className="rounded-3xl theme-card hologram-border p-8 sm:p-14 text-center space-y-6 relative overflow-hidden shadow-2xl">
+          {/* Subtle ambient lighting */}
+          <div className="absolute -top-24 -left-24 w-80 h-80 bg-indigo-500/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute -bottom-24 -right-24 w-80 h-80 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+
           <div className="relative z-10 max-w-2xl mx-auto space-y-4">
-            <h2 className="font-display font-black text-2xl sm:text-4xl tracking-tight">
-              Ready to Turn Your Idea Into a Scalable App?
+            <h2 className="font-display font-black text-2xl sm:text-4xl text-slate-900 dark:text-white tracking-tight">
+              Ready to Turn Your Idea Into a <span className="text-gradient">Scalable App?</span>
             </h2>
-            <p className="text-xs sm:text-sm text-indigo-100 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
               Let's build your Web SaaS, React Native mobile app, or AI tool. Connect on WhatsApp or book a discovery call.
             </p>
             <div className="pt-2 flex flex-wrap justify-center gap-4">
@@ -518,7 +522,7 @@ export default function HomePage() {
                 href="https://wa.me/919579938131?text=Hi%20Bhushan,%20let%27s%20discuss%20a%20project."
                 target="_blank"
                 rel="noreferrer"
-                className="px-8 py-4 rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl flex items-center gap-2"
+                className="px-8 py-4 rounded-2xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm hover:scale-105 active:scale-95 transition-all shadow-xl shadow-emerald-500/20 flex items-center gap-2"
               >
                 <FaWhatsapp className="w-5 h-5" />
                 <span>Chat on WhatsApp (+91 95799 38131)</span>
@@ -528,7 +532,7 @@ export default function HomePage() {
                 to="/services"
                 onMouseEnter={playHover}
                 onClick={playClick}
-                className="px-8 py-4 rounded-2xl bg-indigo-950/60 border border-white/30 text-white font-semibold text-xs sm:text-sm hover:bg-indigo-950/90 transition-all"
+                className="px-8 py-4 rounded-2xl theme-card text-slate-900 dark:text-white font-semibold text-xs sm:text-sm hover:border-indigo-500 hover:scale-105 active:scale-95 transition-all"
               >
                 Calculate Project Cost (₹ INR)
               </Link>
