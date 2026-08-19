@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import { Mail, Phone, MapPin, Send, CheckCircle2, Sparkles, MessageCircle } from 'lucide-react';
@@ -16,11 +16,8 @@ export default function ContactPage() {
     email: '',
     phone: '',
     company: '',
-    budget: estimate ? `₹${estimate.estimatedINR.toLocaleString('en-IN')}` : '₹25,000 – ₹50,000',
-    timeline: estimate ? estimate.timeline : 'Standard Delivery (2-4 weeks)',
-    message: estimate
-      ? `Hi Bhushan, I configured an estimate on your website for a ${estimate.platform}. Selected modules: ${estimate.features}. Estimated weeks: ~${estimate.estimatedWeeks} wks. Budget: ₹${estimate.estimatedINR.toLocaleString('en-IN')}.`
-      : '',
+    timeline: 'Standard Sprint (2-4 weeks)',
+    message: '',
   });
 
   const [submitted, setSubmitted] = useState(false);
@@ -40,225 +37,220 @@ export default function ContactPage() {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-16 ">
+    <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-16 space-y-10 sm:space-y-14 overflow-x-hidden">
       
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto space-y-4 pt-6">
-        <AvailabilityBadge text="🟢 Taking On New Projects in India & Globally" />
-        <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-slate-900 dark:text-white tracking-tight">
-          Let's Build Something <span className="text-gradient">Extraordinary</span>
+      <div className="text-center max-w-3xl mx-auto space-y-3 pt-2 sm:pt-4">
+        <AvailabilityBadge text="🟢 Available for Freelance Projects" />
+        <h1 className="font-display font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-[1.15] break-words">
+          Let's Build Something <br className="hidden sm:inline" />
+          <span className="text-gradient">Extraordinary</span>
         </h1>
-        <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400">
+        <p className="text-xs sm:text-sm md:text-base text-slate-300">
           Have an upcoming web app, mobile app, or AI project requirement? Fill out the brief below or connect directly on WhatsApp.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-start">
         
         {/* Left Col: Contact Info & Guarantees (5 Cols) */}
-        <div className="lg:col-span-5 space-y-6">
+        <div className="lg:col-span-5 space-y-5">
           
-          {/* Quick WhatsApp Connect Banner */}
-          <div className="rounded-3xl bg-gradient-to-r from-emerald-600 to-teal-600 p-6 sm:p-8 text-white space-y-4 shadow-xl">
+          {/* WhatsApp Direct Connect Card */}
+          <div className="rounded-2xl sm:rounded-3xl glass-card hologram-border p-5 sm:p-6 space-y-3.5 shadow-xl border-l-4 border-l-emerald-500">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-2xl bg-white/20 flex items-center justify-center">
-                <FaWhatsapp className="w-7 h-7" />
+              <div className="p-3 rounded-2xl bg-emerald-500/10 text-emerald-400">
+                <FaWhatsapp className="w-6 h-6" />
               </div>
               <div>
-                <h4 className="font-display font-bold text-lg">Instant WhatsApp Chat</h4>
-                <p className="text-xs text-emerald-100">+91 70207 10581 (Pune, India)</p>
+                <h3 className="font-display font-bold text-base sm:text-lg text-white">
+                  Fastest Response: WhatsApp
+                </h3>
+                <p className="text-xs text-slate-400">Direct technical chat with Bhushan</p>
               </div>
             </div>
-            <p className="text-xs text-emerald-100 leading-relaxed">
-              Prefer chatting directly? Message me on WhatsApp for immediate discussion, project estimates, or quick questions.
+
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Have a quick question or want to discuss timelines instantly? Ping me directly.
             </p>
+
             <a
-              href="https://wa.me/9170207 10581?text=Hi%20Bhushan,%20I%20would%20like%20to%20discuss%20a%20project."
+              href={`https://wa.me/917020710581?text=${whatsappDirectMsg}`}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-white text-emerald-800 font-bold text-xs shadow hover:scale-105 transition-all"
+              onClick={playClick}
+              className="w-full py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs sm:text-sm text-center shadow-lg shadow-emerald-500/20 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2"
             >
-              <span>Open WhatsApp Chat</span>
-              <Send className="w-3.5 h-3.5" />
+              <FaWhatsapp className="w-4 h-4" />
+              <span>Message +91 70207 10581</span>
             </a>
           </div>
 
-          <div className="rounded-3xl glass-card hologram-border p-6 sm:p-8 space-y-6 shadow-xl">
-            <h3 className="font-display font-bold text-xl text-slate-900 dark:text-white">
-              Direct Channels
-            </h3>
-            
-            <div className="space-y-4 text-xs sm:text-sm">
-              <a
-                href={`mailto:${personalInfo.email}`}
-                onMouseEnter={playHover}
-                className="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-brand-600 transition-colors"
-              >
-                <div className="p-2.5 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
-                  <Mail className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-[10px] text-slate-500 font-mono">Email Directly</div>
-                  <div className="font-semibold">{personalInfo.email}</div>
-                </div>
-              </a>
+          {/* Direct Email & Location */}
+          <div className="rounded-2xl sm:rounded-3xl glass-card hologram-border p-5 sm:p-6 space-y-3 text-xs">
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400">
+                <Mail className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-slate-400 text-[11px]">Direct Email</div>
+                <a href={`mailto:${personalInfo.email}`} className="font-bold text-white hover:text-indigo-400 transition-colors">
+                  {personalInfo.email}
+                </a>
+              </div>
+            </div>
 
-              <a
-                href={`tel:${personalInfo.phone.replace(/\s+/g, '')}`}
-                onMouseEnter={playHover}
-                className="flex items-center gap-3 text-slate-700 dark:text-slate-300 hover:text-brand-600 transition-colors"
-              >
-                <div className="p-2.5 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
-                  <Phone className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-[10px] text-slate-500 font-mono">Direct Phone</div>
-                  <div className="font-semibold">{personalInfo.phone}</div>
-                </div>
-              </a>
-
-              <div className="flex items-center gap-3 text-slate-700 dark:text-slate-300">
-                <div className="p-2.5 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
-                  <MapPin className="w-4 h-4" />
-                </div>
-                <div>
-                  <div className="text-[10px] text-slate-500 font-mono">Based in</div>
-                  <div className="font-semibold">{personalInfo.location}</div>
-                </div>
+            <div className="flex items-center gap-3">
+              <div className="p-2.5 rounded-xl bg-indigo-500/10 text-indigo-400">
+                <MapPin className="w-4 h-4" />
+              </div>
+              <div>
+                <div className="text-slate-400 text-[11px]">Primary Location</div>
+                <div className="font-bold text-white">{personalInfo.location}</div>
               </div>
             </div>
           </div>
 
-          <div className="rounded-3xl glass-card hologram-border p-6 sm:p-8 space-y-4 shadow-xl">
-            <h4 className="font-display font-bold text-base text-slate-900 dark:text-white">
+          {/* Guarantees */}
+          <div className="rounded-2xl sm:rounded-3xl glass-card p-5 sm:p-6 space-y-2.5 text-xs text-slate-300">
+            <div className="font-display font-bold text-sm text-white">
               Freelance Guarantees
-            </h4>
-            <ul className="space-y-2.5 text-xs text-slate-600 dark:text-slate-400">
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Response within 4–6 hours guaranteed</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Mutual NDA signed prior to project kickoff</span>
-              </li>
-              <li className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0" />
-                <span>Milestone payments via UPI, NEFT, or Razorpay</span>
-              </li>
-            </ul>
+            </div>
+            <div className="space-y-2">
+              <div className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>100% Repository Transfer & Full Code Ownership</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>Weekly Agile Demo Deployments & Sprint Logs</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                <span>Direct developer access — zero agency hierarchy</span>
+              </div>
+            </div>
           </div>
 
         </div>
 
-        {/* Right Col: Project Brief Form (7 Cols) */}
-        <div className="lg:col-span-7 rounded-3xl glass-card hologram-border p-6 sm:p-10 shadow-2xl">
-          {submitted ? (
-            <div className="text-center py-12 space-y-4">
-              <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-500 flex items-center justify-center mx-auto">
-                <CheckCircle2 className="w-9 h-9" />
+        {/* Right Col: Interactive Brief Form (7 Cols) */}
+        <div className="lg:col-span-7">
+          <div className="rounded-2xl sm:rounded-3xl glass-card hologram-border p-6 sm:p-8 shadow-2xl space-y-5">
+            {submitted ? (
+              <div className="text-center py-12 space-y-3">
+                <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mx-auto text-2xl">
+                  ✓
+                </div>
+                <h3 className="font-display font-bold text-xl sm:text-2xl text-white">
+                  Message Received!
+                </h3>
+                <p className="text-xs sm:text-sm text-slate-300 max-w-md mx-auto">
+                  Thank you! I will review your requirements and reply within 24 hours. You can also message me on WhatsApp for urgent queries.
+                </p>
               </div>
-              <h3 className="font-display font-bold text-2xl text-slate-900 dark:text-white">
-                Project Inquiry Sent Successfully!
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
-                Thank you for reaching out, {formData.name}! I will review your requirements and reply with a preliminary architecture proposal and milestone plan within 6 hours.
-              </p>
-              <button
-                onClick={() => { setSubmitted(false); playClick(); }}
-                className="px-6 py-3 rounded-xl bg-brand-600 text-white text-xs font-bold shadow"
-              >
-                Send Another Inquiry
-              </button>
-            </div>
-          ) : (
-            <form onSubmit={handleSubmit} className="space-y-5">
-              
-              {estimate && (
-                <div className="p-3.5 rounded-2xl bg-brand-500/10 border border-brand-500/30 text-xs text-brand-700 dark:text-brand-300 font-mono">
-                  ✨ Pre-filled with your custom Project Calculator estimate (₹{estimate.estimatedINR.toLocaleString('en-IN')})
-                </div>
-              )}
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Your Full Name *</label>
-                  <input
-                    type="text"
-                    required
-                    placeholder="e.g. Rahul Sharma"
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl glass-card text-xs focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 dark:text-white"
-                  />
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="space-y-1">
+                  <h3 className="font-display font-bold text-lg sm:text-xl text-white">
+                    Submit Project Brief
+                  </h3>
+                  <p className="text-xs text-slate-400">
+                    Tell me about your product requirements and timeline.
+                  </p>
                 </div>
 
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Email Address *</label>
-                  <input
-                    type="email"
-                    required
-                    placeholder="rahul@company.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl glass-card text-xs focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 dark:text-white"
-                  />
-                </div>
-              </div>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  <div className="space-y-1 text-left">
+                    <label className="text-[11px] font-mono font-bold text-slate-300">Your Name *</label>
+                    <input
+                      type="text"
+                      required
+                      placeholder="e.g. Rahul Sharma"
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
+                    />
+                  </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-700 dark:text-slate-300">WhatsApp / Phone Number</label>
-                  <input
-                    type="tel"
-                    placeholder="+91 98765 43210"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl glass-card text-xs focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 dark:text-white"
-                  />
+                  <div className="space-y-1 text-left">
+                    <label className="text-[11px] font-mono font-bold text-slate-300">Your Email *</label>
+                    <input
+                      type="email"
+                      required
+                      placeholder="e.g. rahul@company.com"
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
+                    />
+                  </div>
                 </div>
 
-                <div className="space-y-1.5">
-                  <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Budget Range (₹ INR)</label>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                  <div className="space-y-1 text-left">
+                    <label className="text-[11px] font-mono font-bold text-slate-300">Phone / WhatsApp</label>
+                    <input
+                      type="tel"
+                      placeholder="e.g. +91 98765 43210"
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
+                    />
+                  </div>
+
+                  <div className="space-y-1 text-left">
+                    <label className="text-[11px] font-mono font-bold text-slate-300">Company / Project Name</label>
+                    <input
+                      type="text"
+                      placeholder="e.g. NextGen SaaS"
+                      value={formData.company}
+                      onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-1 text-left">
+                  <label className="text-[11px] font-mono font-bold text-slate-300">Expected Timeline</label>
                   <select
-                    value={formData.budget}
-                    onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl glass-card text-xs focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 dark:text-white"
+                    value={formData.timeline}
+                    onChange={(e) => setFormData({ ...formData, timeline: e.target.value })}
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs text-white focus:outline-none focus:border-indigo-500"
                   >
-                    <option value="< ₹25,000">&lt; ₹25,000 (Small sprint / bug fixing)</option>
-                    <option value="₹25,000 – ₹50,000">₹25,000 – ₹50,000 (MVP / AI feature / Landing App)</option>
-                    <option value="₹50,000 – ₹1,00,000">₹50,000 – ₹1,00,000 (Full-Stack Web SaaS / Mobile App)</option>
-                    <option value="₹1,00,000+">₹1,00,000+ (Enterprise ERP / Multi-Platform Suite)</option>
+                    <option value="Urgent MVP (1-2 weeks)">Urgent MVP (1-2 weeks)</option>
+                    <option value="Standard Sprint (2-4 weeks)">Standard Sprint (2-4 weeks)</option>
+                    <option value="Multi-Month Platform (2-3 months)">Multi-Month Platform (2-3 months)</option>
+                    <option value="Ongoing Retainer / Consultation">Ongoing Retainer / Consultation</option>
                   </select>
                 </div>
-              </div>
 
-              <div className="space-y-1.5">
-                <label className="text-xs font-bold text-slate-700 dark:text-slate-300">Project Requirements & Timeline *</label>
-                <textarea
-                  required
-                  rows={4}
-                  placeholder="Tell me about your product requirements, required integrations (Razorpay, Supabase, AI, Auth), target launch date, or any existing Figma mockups..."
-                  value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl glass-card text-xs focus:outline-none focus:ring-2 focus:ring-brand-500 text-slate-900 dark:text-white resize-none"
-                />
-              </div>
+                <div className="space-y-1 text-left">
+                  <label className="text-[11px] font-mono font-bold text-slate-300">Project Overview & Requirements *</label>
+                  <textarea
+                    rows={4}
+                    required
+                    placeholder="Describe your product idea, key features, target users, or tech stack preference..."
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-slate-900/80 border border-white/10 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:border-indigo-500"
+                  />
+                </div>
 
-              <button
-                type="submit"
-                onMouseEnter={playHover}
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-brand-600 via-indigo-600 to-cyanBrand-500 text-white font-bold text-xs sm:text-sm shadow-xl shadow-brand-500/25 hover:opacity-95 hover:scale-[1.01] transition-all flex items-center justify-center gap-2"
-              >
-                <span>Send Project Brief</span>
-                <Send className="w-4 h-4" />
-              </button>
-
-            </form>
-          )}
+                <button
+                  type="submit"
+                  onMouseEnter={playHover}
+                  className="w-full py-3.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm text-center shadow-xl shadow-indigo-500/25 hover:scale-[1.01] active:scale-[0.99] transition-all flex items-center justify-center gap-2"
+                >
+                  <Send className="w-4 h-4" />
+                  <span>Send Project Brief</span>
+                </button>
+              </form>
+            )}
+          </div>
         </div>
 
       </div>
+
     </div>
   );
 }
