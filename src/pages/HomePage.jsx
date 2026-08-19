@@ -28,85 +28,16 @@ export default function HomePage() {
   return (
     <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 sm:pt-24 pb-16 space-y-12 sm:space-y-16 md:space-y-20 overflow-x-hidden">
       
-      {/* 1. HERO SECTION */}
+      {/* 1. HERO SECTION (IMAGE AT TOP ON MOBILE) */}
       <section className="relative w-full pt-2 sm:pt-4">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Hero Content (7 Cols) */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-7 space-y-4 sm:space-y-5 text-left"
-          >
-            {/* Availability & Location Status */}
-            <div className="flex flex-wrap items-center gap-2">
-              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full glass-card text-[11px] sm:text-xs text-slate-300">
-                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
-                <span className="font-semibold text-emerald-400">Available for Freelance</span>
-              </div>
-              <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full glass-card text-[11px] sm:text-xs font-mono text-slate-400">
-                <Clock className="w-3 h-3 text-indigo-400 shrink-0" />
-                <span>Pune (IST): <strong className="text-white">{puneTime || 'IST'}</strong></span>
-              </div>
-            </div>
-
-            {/* Main Headline */}
-            <h1 className="font-display font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-[1.15] break-words">
-              I Build Digital Products That <br className="hidden sm:inline" />
-              <span className="text-gradient">Grow Businesses.</span>
-            </h1>
-
-            {/* Description */}
-            <p className="text-xs sm:text-sm md:text-base text-slate-300 max-w-lg leading-relaxed">
-              Hi, I'm <strong className="text-white">Bhushan Shimpi</strong>. I build modern websites, MERN applications, React Native apps and AI-powered products for startups and businesses — from idea to deployment.
-            </p>
-
-            {/* Two Focused CTAs */}
-            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
-              <Link
-                to="/contact"
-                onMouseEnter={playHover}
-                onClick={playClick}
-                className="w-full sm:w-auto text-center justify-center px-5 sm:px-6 py-3 rounded-xl sm:rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm shadow-lg shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
-              >
-                <span>Start a Project</span>
-                <ArrowUpRight className="w-4 h-4" />
-              </Link>
-
-              <a
-                href="#work"
-                className="w-full sm:w-auto text-center justify-center px-5 sm:px-6 py-3 rounded-xl sm:rounded-2xl glass-card text-slate-200 font-semibold text-xs sm:text-sm hover:border-indigo-500 transition-all flex items-center gap-2"
-              >
-                <span>View My Work</span>
-                <ArrowDown className="w-3.5 h-3.5" />
-              </a>
-            </div>
-
-            {/* Credibility Indicators */}
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2 text-[11px] sm:text-xs text-slate-400">
-              <div className="flex items-center gap-1.5">
-                <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>100% Code Transfer</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>Weekly Live Demos</span>
-              </div>
-              <div className="flex items-center gap-1.5">
-                <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
-                <span>MERN + React Native</span>
-              </div>
-            </div>
-
-          </motion.div>
-
-          {/* Right Hero: Pure Round Profile Picture (5 Cols) */}
+          {/* Profile Picture Showcase (Top on Mobile: order-1, Right on Desktop: lg:order-2) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.7 }}
-            className="lg:col-span-5 flex justify-center py-4 lg:py-0"
+            className="lg:col-span-5 flex justify-center pb-2 lg:py-0 order-1 lg:order-2"
           >
             <div className="relative flex flex-col items-center space-y-3 w-full max-w-[280px] sm:max-w-xs">
               
@@ -174,6 +105,75 @@ export default function HomePage() {
               </div>
 
             </div>
+          </motion.div>
+
+          {/* Left Hero Content (Below Image on Mobile: order-2, Left on Desktop: lg:order-1) */}
+          <motion.div
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="lg:col-span-7 space-y-4 sm:space-y-5 text-left order-2 lg:order-1"
+          >
+            {/* Availability & Location Status */}
+            <div className="flex flex-wrap items-center gap-2">
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full glass-card text-[11px] sm:text-xs text-slate-300">
+                <span className="h-2 w-2 rounded-full bg-emerald-500 animate-pulse shrink-0"></span>
+                <span className="font-semibold text-emerald-400">Available for Freelance</span>
+              </div>
+              <div className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full glass-card text-[11px] sm:text-xs font-mono text-slate-400">
+                <Clock className="w-3 h-3 text-indigo-400 shrink-0" />
+                <span>Pune (IST): <strong className="text-white">{puneTime || 'IST'}</strong></span>
+              </div>
+            </div>
+
+            {/* Main Headline */}
+            <h1 className="font-display font-black text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white tracking-tight leading-[1.15] break-words">
+              I Build Digital Products That <br className="hidden sm:inline" />
+              <span className="text-gradient">Grow Businesses.</span>
+            </h1>
+
+            {/* Description */}
+            <p className="text-xs sm:text-sm md:text-base text-slate-300 max-w-lg leading-relaxed">
+              Hi, I'm <strong className="text-white">Bhushan Shimpi</strong>. I build modern websites, MERN applications, React Native apps and AI-powered products for startups and businesses — from idea to deployment.
+            </p>
+
+            {/* Two Focused CTAs */}
+            <div className="flex flex-wrap items-center gap-2.5 sm:gap-3 pt-1">
+              <Link
+                to="/contact"
+                onMouseEnter={playHover}
+                onClick={playClick}
+                className="w-full sm:w-auto text-center justify-center px-5 sm:px-6 py-3 rounded-xl sm:rounded-2xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs sm:text-sm shadow-lg shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2"
+              >
+                <span>Start a Project</span>
+                <ArrowUpRight className="w-4 h-4" />
+              </Link>
+
+              <a
+                href="#work"
+                className="w-full sm:w-auto text-center justify-center px-5 sm:px-6 py-3 rounded-xl sm:rounded-2xl glass-card text-slate-200 font-semibold text-xs sm:text-sm hover:border-indigo-500 transition-all flex items-center gap-2"
+              >
+                <span>View My Work</span>
+                <ArrowDown className="w-3.5 h-3.5" />
+              </a>
+            </div>
+
+            {/* Credibility Indicators */}
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-2 text-[11px] sm:text-xs text-slate-400">
+              <div className="flex items-center gap-1.5">
+                <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>100% Code Transfer</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>Weekly Live Demos</span>
+              </div>
+              <div className="flex items-center gap-1.5">
+                <Check className="w-3.5 h-3.5 text-emerald-400 shrink-0" />
+                <span>MERN + React Native</span>
+              </div>
+            </div>
+
           </motion.div>
 
         </div>
