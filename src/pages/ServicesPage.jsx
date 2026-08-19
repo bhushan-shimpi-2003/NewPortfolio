@@ -1,7 +1,7 @@
 ﻿import React from 'react';
+import { Link } from 'react-router-dom';
 import { Globe, Smartphone, Sparkles, ShieldCheck, CheckCircle2, ArrowRight, HelpCircle, Layers, Zap } from 'lucide-react';
 import { freelanceServices, freelanceFaqs } from '../data/servicesData';
-import ProjectEstimator from '../components/freelance/ProjectEstimator';
 import ProcessRoadmap from '../components/freelance/ProcessRoadmap';
 import AvailabilityBadge from '../components/freelance/AvailabilityBadge';
 import { useSound } from '../context/SoundContext';
@@ -17,16 +17,16 @@ export default function ServicesPage() {
   const { playHover, playClick } = useSound();
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-24 ">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 pb-20 space-y-24">
       
       {/* Header */}
       <section className="text-center max-w-3xl mx-auto space-y-4 pt-6">
         <AvailabilityBadge />
         <h1 className="font-display font-black text-3xl sm:text-5xl md:text-6xl text-slate-900 dark:text-white tracking-tight">
-          Freelance Tracks & <span className="text-gradient">Pricing Specs</span>
+          Engineering & <span className="text-gradient">Development Services</span>
         </h1>
         <p className="text-xs sm:text-sm md:text-base text-slate-600 dark:text-slate-400 leading-relaxed">
-          Transparent, sprint-based software engineering for founders and scaling teams. Full source code ownership, zero agency overhead, 100% direct communication.
+          Sprint-based software engineering for founders and scaling teams. Full source code ownership, zero agency overhead, and 100% direct communication.
         </p>
       </section>
 
@@ -42,17 +42,16 @@ export default function ServicesPage() {
             >
               <div className="space-y-6">
                 <div className="flex items-center justify-between">
-                  <div className="p-3.5 rounded-2xl bg-brand-500/10 text-brand-600 dark:text-brand-400 font-bold">
+                  <div className="p-3.5 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 font-bold">
                     <IconComp className="w-6 h-6" />
                   </div>
-                  <div className="text-right">
-                    <div className="text-[10px] text-slate-400 uppercase font-mono font-bold">Starting from</div>
-                    <div className="font-display font-extrabold text-base sm:text-lg text-slate-900 dark:text-white">{svc.startingRate}</div>
-                  </div>
+                  <span className="text-xs font-mono text-indigo-600 dark:text-indigo-400 font-bold px-3 py-1 rounded-full bg-indigo-500/10">
+                    ~{svc.deliveryTime}
+                  </span>
                 </div>
 
                 <div>
-                  <h3 className="font-display font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-white group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                  <h3 className="font-display font-extrabold text-xl sm:text-2xl text-slate-900 dark:text-white group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
                     {svc.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 mt-2 leading-relaxed">
@@ -80,24 +79,20 @@ export default function ServicesPage() {
 
               <div className="pt-6 mt-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between">
                 <span className="text-xs font-mono text-slate-500">
-                  Cadence: ~{svc.deliveryTime}
+                  Full Code Handover & 30-Day Warranty
                 </span>
-                <a
-                  href="#estimator"
+                <Link
+                  to="/contact"
                   onClick={playClick}
-                  className="px-4 py-2 rounded-xl bg-brand-500/15 hover:bg-brand-500 hover:text-white text-brand-600 dark:text-brand-400 font-bold text-xs transition-all flex items-center gap-1.5"
+                  className="px-4 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs transition-all flex items-center gap-1.5 shadow-md shadow-indigo-500/20"
                 >
-                  <Zap className="w-3.5 h-3.5" /> Configure Scope
-                </a>
+                  <span>Inquire Now</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </Link>
               </div>
             </div>
           );
         })}
-      </section>
-
-      {/* Interactive Estimator */}
-      <section id="estimator" className="scroll-mt-28">
-        <ProjectEstimator />
       </section>
 
       {/* Process Roadmap */}
@@ -117,7 +112,7 @@ export default function ServicesPage() {
       <section className="max-w-4xl mx-auto space-y-8">
         <div className="text-center space-y-2">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-200 dark:bg-slate-800 text-xs font-mono font-semibold">
-            <HelpCircle className="w-3.5 h-3.5 text-brand-500" />
+            <HelpCircle className="w-3.5 h-3.5 text-indigo-500" />
             Frequently Asked Questions
           </div>
           <h2 className="font-display font-bold text-2xl sm:text-3xl text-slate-900 dark:text-white">

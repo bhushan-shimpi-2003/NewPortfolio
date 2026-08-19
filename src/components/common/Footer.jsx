@@ -17,7 +17,7 @@ export default function Footer() {
           {/* Brand & Bio */}
           <div className="space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-cyanBrand-500 flex items-center justify-center text-white font-display font-black text-base shadow">
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 to-cyan-500 flex items-center justify-center text-white font-display font-black text-base shadow">
                 BS
               </div>
               <span className="font-display font-black text-lg text-slate-900 dark:text-white">
@@ -29,7 +29,7 @@ export default function Footer() {
             </p>
             <div className="pt-1 flex items-center gap-2 text-xs text-emerald-600 dark:text-emerald-400 font-medium">
               <span className="h-2.5 w-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              Available for Freelance Projects in India
+              Available for Freelance Projects
             </div>
           </div>
 
@@ -40,28 +40,28 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <Link to="/" onMouseEnter={playHover} onClick={playClick} className="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-                  Home (3D Experience)
+                <Link to="/" onMouseEnter={playHover} onClick={playClick} className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Home
                 </Link>
               </li>
               <li>
-                <Link to="/services" onMouseEnter={playHover} onClick={playClick} className="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-                  Services & Pricing (₹ INR)
+                <Link to="/projects" onMouseEnter={playHover} onClick={playClick} className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Work
                 </Link>
               </li>
               <li>
-                <Link to="/projects" onMouseEnter={playHover} onClick={playClick} className="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-                  Client Case Studies
+                <Link to="/services" onMouseEnter={playHover} onClick={playClick} className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Services
                 </Link>
               </li>
               <li>
-                <Link to="/about" onMouseEnter={playHover} onClick={playClick} className="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-                  About & 3D Tech Orbit
+                <Link to="/about" onMouseEnter={playHover} onClick={playClick} className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  About
                 </Link>
               </li>
               <li>
-                <Link to="/contact" onMouseEnter={playHover} onClick={playClick} className="text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors">
-                  Contact / Hire
+                <Link to="/contact" onMouseEnter={playHover} onClick={playClick} className="text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">
+                  Contact
                 </Link>
               </li>
             </ul>
@@ -70,14 +70,14 @@ export default function Footer() {
           {/* Freelance Offerings */}
           <div className="space-y-3">
             <h4 className="font-display font-bold text-xs uppercase tracking-wider text-slate-900 dark:text-white">
-              Freelance Tracks
+              Capabilities
             </h4>
             <ul className="space-y-2 text-xs text-slate-600 dark:text-slate-400">
-              <li>Full-Stack MERN & Next.js SaaS</li>
-              <li>React Native Android & iOS Apps</li>
-              <li>AI LLM Integration & ATS Scoring</li>
-              <li>School & Clinic ERP Systems</li>
-              <li>Razorpay / Cashfree / UPI Integrations</li>
+              <li>Web Applications (MERN & Next.js)</li>
+              <li>Mobile Applications (React Native)</li>
+              <li>AI Integration & ATS Parsing</li>
+              <li>Custom Enterprise Portals</li>
+              <li>REST / GraphQL APIs & Databases</li>
             </ul>
           </div>
 
@@ -94,20 +94,20 @@ export default function Footer() {
                 className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-bold hover:underline"
               >
                 <FaWhatsapp className="w-4 h-4" />
-                <span>+91 95799 38131 (WhatsApp)</span>
+                <span>Chat on WhatsApp</span>
               </a>
 
               <a
                 href={`mailto:${personalInfo.email}`}
                 onMouseEnter={playHover}
-                className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-brand-600 dark:hover:text-brand-400 transition-colors"
+                className="flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors"
               >
-                <Mail className="w-4 h-4 text-brand-500" />
+                <Mail className="w-4 h-4 text-indigo-500" />
                 <span>{personalInfo.email}</span>
               </a>
 
               <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
-                <MapPin className="w-4 h-4 text-brand-500" />
+                <MapPin className="w-4 h-4 text-indigo-500" />
                 <span>Pune, Maharashtra, India</span>
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function Footer() {
                 rel="noreferrer"
                 onMouseEnter={playHover}
                 onClick={playClick}
-                className="p-2.5 rounded-xl glass-card hover:border-brand-500 transition-all text-slate-700 dark:text-slate-300 hover:text-brand-600"
+                className="p-2.5 rounded-xl glass-card hover:border-indigo-500 transition-all text-slate-700 dark:text-slate-300 hover:text-indigo-600"
                 title="GitHub Profile"
               >
                 <FaGithub className="w-4 h-4" />
@@ -130,7 +130,7 @@ export default function Footer() {
                 rel="noreferrer"
                 onMouseEnter={playHover}
                 onClick={playClick}
-                className="p-2.5 rounded-xl glass-card hover:border-brand-500 transition-all text-slate-700 dark:text-slate-300 hover:text-brand-600"
+                className="p-2.5 rounded-xl glass-card hover:border-indigo-500 transition-all text-slate-700 dark:text-slate-300 hover:text-indigo-600"
                 title="LinkedIn Profile"
               >
                 <FaLinkedin className="w-4 h-4" />
@@ -141,8 +141,8 @@ export default function Footer() {
                 rel="noreferrer"
                 onMouseEnter={playHover}
                 onClick={playClick}
-                className="p-2.5 rounded-xl glass-card hover:border-brand-500 transition-all text-slate-700 dark:text-slate-300 hover:text-brand-600"
-                title="Live Vercel Hub"
+                className="p-2.5 rounded-xl glass-card hover:border-indigo-500 transition-all text-slate-700 dark:text-slate-300 hover:text-indigo-600"
+                title="Live Portfolio"
               >
                 <Globe className="w-4 h-4" />
               </a>
@@ -157,7 +157,7 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <span>Pune, Maharashtra, India</span>
             <span>•</span>
-            <span className="font-mono text-[11px] text-brand-600 dark:text-brand-400">MERN + React Native + AI</span>
+            <span className="font-mono text-[11px] text-indigo-600 dark:text-indigo-400">MERN + React Native + AI</span>
           </div>
         </div>
       </div>
