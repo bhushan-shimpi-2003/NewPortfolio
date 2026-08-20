@@ -24,6 +24,191 @@ function getStarTexture() {
   return texture;
 }
 
+// -------------------------------------------------------------
+// TUTATA TARA / SHOOTING STARS (METEOR SHOWER) COMPONENT
+// -------------------------------------------------------------
+function ShootingStars() {
+  const count = 4; // Simultaneous shooting star lanes
+  const linesRef = useRef();
+
+  // Trail line segments per shooting star (for smooth gradient fading)
+  const segmentsPerStar = 12;
+  const totalVertices = count * segmentsPerStar * 2;
+
+  // State array for each shooting star
+  const starsState = useMemo(() => {
+    return Array.from({ length: count }, (_, idx) => ({
+      active: false,
+      timer: Math.random() * 2 + idx * 1.5, // Initial staggered delay
+      progress: 0,
+      duration: 0.8 + Math.random() * 0.6,
+      startX: 0,
+      startY: 0,
+      startZ: -2 + Math.random() * 3,
+      dx: -1.4 - Math.random() * 0.4, // Diagonal right-to-left
+      dy: -0.9 - Math.random() * 0.5, // Downward streak
+      length: 3.2 + Math.random() * 2.0,
+      color: [
+        [1.0, 1.0, 1.0], // Glowing white core
+        [0.22, 0.74, 0.97], // Electric cyan
+        [0.5, 0.55, 0.97]  // Neon indigo
+      ][idx % 3]
+    }));
+  }, [count]);
+
+  const { positions, colors } = useMemo(() => {
+    return {
+      positions: new Float32Array(totalVertices * 3),
+      colors: new Float32Array(totalVertices * 3)
+    };
+  }, [totalVertices]);
+
+  useFrame((_, delta) => {
+    if (!linesRef.current) return;
+
+    const posAttr = linesRef.current.geometry.attributes.position;
+    const colAttr = linesRef.current.geometry.attributes.color;
+    const posArr = posAttr.array;
+    const colArr = colAttr.array;
+
+    starsState.forEach((star, sIdx) => {
+      const baseIdx = sIdx * segmentsPerStar * 2 * 3;
+
+      if (!star.active) {
+        star.timer -= delta;
+        if (star.timer <= 0) {
+          // Spawn shooting star high in the viewport
+          star.active = true;
+          star.progress = 0;
+          star.duration = 0.75 + Math.random() * 0.55;
+          star.startX = 6 + Math.random() * 14; // Right side
+          star.startY = 6 + Math.random() * 10; // Top side
+          star.startZ = -1 + Math.random() * 3;
+          star.length = 3.5 + Math.random() * 2.2;
+          star.dx = -1.5 - Math.random() * 0.5;
+          star.dy = -1.0 - Math.random() * 0.5;
+        } else {
+          // Hide vertices when dormant
+          for (let k = 0; k < segmentsPerStar * 2; k++) {
+            const vIdx = baseIdx + k * 3;
+            posArr[vIdx] = 9999;
+            posArr[vIdx + 1] = 9999;
+            posArr[vIdx + 2] = 9999;
+            colArr[vIdx] = 0;
+            colArr[vIdx + 1] = 0;
+            colArr[vIdx + 2] = 0;
+          }
+          return;
+        }
+      }
+
+      // Active shooting star movement
+      star.progress += delta / star.duration;
+
+      if (star.progress >= 1.0) {
+        star.active = false;
+        star.timer = 1.8 + Math.random() * 4.5; // Delay before next meteor
+        for (let k = 0; k < segmentsPerStar * 2; k++) {
+          const vIdx = baseIdx + k * 3;
+          posArr[vIdx] = 9999;
+          posArr[vIdx + 1] = 9999;
+          posArr[vIdx + 2] = 9999;
+          colArr[vIdx] = 0;
+          colArr[vIdx + 1] = 0;
+          colArr[vIdx + 2] = 0;
+        }
+        return;
+      }
+
+      // Smooth fade-in then fade-out curve (Bell curve)
+      const p = star.progress;
+      const alpha = Math.sin(p * Math.PI); // 0 -> 1 -> 0
+
+      // Head position
+      const headX = star.startX + star.dx * (p * 22);
+      const headY = star.startY + star.dy * (p * 22);
+      const headZ = star.startZ;
+
+      // Normalize streak direction
+      const len = Math.sqrt(star.dx * star.dx + star.dy * star.dy);
+      const dirX = (star.dx / len) * star.length;
+      const dirY = (star.dy / len) * star.length;
+
+      // Draw tapered gradient segments along meteor trail
+      for (let s = 0; s < segmentsPerStar; s++) {
+        const t1 = s / segmentsPerStar;
+        const t2 = (s + 1) / segmentsPerStar;
+
+        // Vertex 1 of segment
+        const p1X = headX - dirX * t1;
+        const p1Y = headY - dirY * t1;
+        const p1Z = headZ;
+
+        // Vertex 2 of segment
+        const p2X = headX - dirX * t2;
+        const p2Y = headY - dirY * t2;
+        const p2Z = headZ;
+
+        const v1Idx = baseIdx + s * 6;
+        const v2Idx = baseIdx + s * 6 + 3;
+
+        posArr[v1Idx] = p1X;
+        posArr[v1Idx + 1] = p1Y;
+        posArr[v1Idx + 2] = p1Z;
+
+        posArr[v2Idx] = p2X;
+        posArr[v2Idx + 1] = p2Y;
+        posArr[v2Idx + 2] = p2Z;
+
+        // Gradient color fading towards tail
+        const intensity1 = Math.pow(1 - t1, 1.8) * alpha;
+        const intensity2 = Math.pow(1 - t2, 1.8) * alpha;
+
+        colArr[v1Idx] = star.color[0] * intensity1;
+        colArr[v1Idx + 1] = star.color[1] * intensity1;
+        colArr[v1Idx + 2] = star.color[2] * intensity1;
+
+        colArr[v2Idx] = star.color[0] * intensity2;
+        colArr[v2Idx + 1] = star.color[1] * intensity2;
+        colArr[v2Idx + 2] = star.color[2] * intensity2;
+      }
+    });
+
+    posAttr.needsUpdate = true;
+    colAttr.needsUpdate = true;
+  });
+
+  return (
+    <lineSegments ref={linesRef}>
+      <bufferGeometry>
+        <bufferAttribute
+          attach="attributes-position"
+          count={totalVertices}
+          array={positions}
+          itemSize={3}
+        />
+        <bufferAttribute
+          attach="attributes-color"
+          count={totalVertices}
+          array={colors}
+          itemSize={3}
+        />
+      </bufferGeometry>
+      <lineBasicMaterial
+        vertexColors
+        transparent
+        opacity={0.95}
+        blending={THREE.AdditiveBlending}
+        depthWrite={false}
+        linewidth={2}
+      />
+    </lineSegments>
+  );
+}
+
+// -------------------------------------------------------------
+// INTERACTIVE 600-STAR COSMOS SCENE
+// -------------------------------------------------------------
 function InteractiveStarsScene() {
   const pointsRef = useRef();
   const mouse = useRef({ x: 9999, y: 9999, active: false });
@@ -215,6 +400,7 @@ export default function BackgroundCanvas() {
         {/* Deep pitch space background */}
         <color attach="background" args={["#030712"]} />
         <InteractiveStarsScene />
+        <ShootingStars />
       </Canvas>
     </div>
   );
