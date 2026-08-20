@@ -110,7 +110,7 @@ export const projectsData = [
     category: "Enterprise Web & Mobile SaaS",
     featured: true,
     badge: "Enterprise SaaS",
-    heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
+    heroImage: "/projects/fresherx.jpg",
     demoUrl: "https://fresherx-backend.vercel.app",
     githubUrl: "https://github.com/bhushan-shimpi-2003/FresherX",
     metrics: [
@@ -143,7 +143,7 @@ export const projectsData = [
     category: "EdTech Web & Mobile",
     featured: true,
     badge: "EdTech Platform",
-    heroImage: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1200&auto=format&fit=crop",
+    heroImage: "/projects/codecure.jpg",
     demoUrl: "https://codecuredev.com/",
     githubUrl: "https://github.com/bhushan-shimpi-2003/CodeCure-Acedamy",
     metrics: [
@@ -176,7 +176,7 @@ export const projectsData = [
     category: "Creative & Client Web App",
     featured: true,
     badge: "Client Web App",
-    heroImage: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop",
+    heroImage: "/projects/makeup_studio.jpg",
     demoUrl: "https://makeup-artist-git-main-bhushans-projects-ceafe26e.vercel.app/",
     githubUrl: "https://github.com/bhushan-shimpi-2003/MakeupArtist",
     metrics: [
@@ -209,7 +209,7 @@ export const projectsData = [
     category: "AI & Full-Stack Web + Mobile",
     featured: true,
     badge: "AI Application",
-    heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    heroImage: "/projects/talentiq.jpg",
     demoUrl: "https://intervu-frontend.vercel.app/",
     githubUrl: "https://github.com/bhushan-shimpi-2003",
     metrics: [
@@ -242,7 +242,7 @@ export const projectsData = [
     category: "Healthcare SaaS",
     featured: false,
     badge: "Healthcare SaaS",
-    heroImage: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=1200&auto=format&fit=crop",
+    heroImage: "/projects/dentacare.jpg",
     demoUrl: "https://dentistprodemo.vercel.app/",
     githubUrl: "https://github.com/bhushan-shimpi-2003",
     metrics: [
