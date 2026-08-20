@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../data/portfolioData';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { FaGithub } from 'react-icons/fa';
 import { useSound } from '../context/SoundContext';
 
@@ -9,7 +9,7 @@ export default function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState('All');
   const { playHover, playClick } = useSound();
 
-  const filters = ['All', 'AI & Full-Stack', 'Enterprise SaaS', 'EdTech', 'Healthcare'];
+  const filters = ['All', 'AI & Full-Stack', 'Enterprise SaaS', 'EdTech', 'Healthcare', 'Client & Web Apps'];
 
   const filteredProjects = projectsData.filter((p) => {
     if (activeFilter === 'All') return true;
@@ -17,6 +17,7 @@ export default function ProjectsPage() {
     if (activeFilter === 'Enterprise SaaS') return p.category.includes('Enterprise');
     if (activeFilter === 'EdTech') return p.category.includes('EdTech');
     if (activeFilter === 'Healthcare') return p.category.includes('Healthcare');
+    if (activeFilter === 'Client & Web Apps') return p.category.includes('Client') || p.category.includes('Creative');
     return true;
   });
 
@@ -117,15 +118,28 @@ export default function ProjectsPage() {
             </div>
 
             {/* Bottom Actions */}
-            <div className="p-5 sm:p-7 pt-0 flex items-center gap-2.5">
+            <div className="p-5 sm:p-7 pt-0 flex flex-wrap items-center gap-2">
               <Link
                 to={`/projects/${project.slug}`}
                 onClick={playClick}
                 className="flex-1 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xs text-center shadow-md shadow-indigo-500/20 transition-all flex items-center justify-center gap-1.5"
               >
-                <span>Read Case Study</span>
+                <span>Case Study</span>
                 <ArrowRight className="w-3.5 h-3.5" />
               </Link>
+              {project.demoUrl && (
+                <a
+                  href={project.demoUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  onClick={playClick}
+                  className="px-3.5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-300 hover:text-white font-bold text-xs transition-all flex items-center gap-1 border border-white/10"
+                  title="Explore Live Website"
+                >
+                  <span>Live Demo</span>
+                  <ExternalLink className="w-3 h-3" />
+                </a>
+              )}
               <a
                 href={project.githubUrl}
                 target="_blank"

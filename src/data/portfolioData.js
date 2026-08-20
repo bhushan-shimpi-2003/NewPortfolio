@@ -170,6 +170,39 @@ export const projectsData = [
     ]
   },
   {
+    slug: "makeup-artist-studio",
+    title: "Luxe Beauty & Makeup Studio",
+    tagline: "Luxury Bridal, Editorial & Glamour Makeup Portfolio & Booking Web App",
+    category: "Creative & Client Web App",
+    featured: true,
+    badge: "Client Web App",
+    heroImage: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop",
+    demoUrl: "https://makeup-artist-git-main-bhushans-projects-ceafe26e.vercel.app/",
+    githubUrl: "https://github.com/bhushan-shimpi-2003",
+    metrics: [
+      { label: "Booking Speed", value: "< 45 sec" },
+      { label: "Lead Inquiries", value: "+60%" },
+      { label: "Mobile Experience", value: "100% Fluid" }
+    ],
+    overview: "A premium, responsive portfolio and digital appointment booking platform for a professional makeup artist, showcasing categorized bridal, fashion, and party lookbooks, customized beauty packages, and instant booking workflows.",
+    problem: "Beauty artists and studios lose high-value bridal clients through disjointed Instagram DMs, unorganized rate cards, and manual scheduling bottlenecks.",
+    solution: "Constructed a high-converting, visually rich React application with interactive service package selection, high-resolution lookbook galleries with optimized image delivery, verified client testimonials, and direct WhatsApp/calendar appointment booking.",
+    architecture: [
+      "Frontend: React.js SPA with Tailwind CSS and Framer Motion micro-interactions.",
+      "Media Delivery: Lazy-loaded responsive image CDN pipelines for zero-lag lookbook rendering.",
+      "Conversion Engine: Interactive bridal package calculator with direct WhatsApp lead trigger.",
+      "Deployment: Continuous deployment and edge delivery on Vercel with high-speed Core Web Vitals."
+    ],
+    techStack: ["React.js", "Tailwind CSS", "Framer Motion", "Vercel", "WhatsApp API", "Responsive UI"],
+    features: [
+      "Categorized Bridal, HD Glamour, Reception & Party Makeup Lookbook Galleries",
+      "Interactive Tiered Styling Packages with transparent pricing and customizable add-ons",
+      "One-click direct WhatsApp booking trigger with pre-filled service inquiries",
+      "Verified client testimonials, FAQ accordion, and artist experience timeline",
+      "Ultra-responsive mobile-first design with smooth scroll micro-animations"
+    ]
+  },
+  {
     slug: "codecure-academy",
     title: "CodeCure Academy",
     tagline: "Full-Stack EdTech Learning Management & Interactive Video Quiz Platform",
