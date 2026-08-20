@@ -51,6 +51,9 @@ export default function HomePage() {
                   <img
                     src={profilePhoto}
                     alt="Bhushan Shimpi"
+                    loading="eager"
+                    decoding="async"
+                    fetchPriority="high"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   />
                 </div>
@@ -422,7 +425,9 @@ export default function HomePage() {
                   <img
                     src={project.heroImage}
                     alt={project.title}
-                    className="w-full h-48 sm:h-60 lg:h-72 object-cover group-hover:scale-105 transition-transform duration-700"
+                    loading="lazy"
+                    decoding="async"
+                    className="w-full h-48 sm:h-60 lg:h-72 object-cover group-hover:scale-105 transition-transform duration-700 bg-slate-900"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent"></div>
                 </div>

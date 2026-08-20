@@ -69,7 +69,9 @@ export default function ProjectsPage() {
                 <img
                   src={project.heroImage}
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 bg-slate-900"
                 />
                 <div className="absolute top-3 left-3">
                   <span className="px-2.5 py-0.5 rounded-full bg-slate-900/90 text-cyan-300 text-[10px] sm:text-[11px] font-mono backdrop-blur-md border border-white/10">

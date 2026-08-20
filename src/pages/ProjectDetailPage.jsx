@@ -72,7 +72,9 @@ export default function ProjectDetailPage() {
           <img
             src={project.heroImage}
             alt={project.title}
-            className="w-full h-full object-cover"
+            loading="eager"
+            decoding="async"
+            className="w-full h-full object-cover bg-slate-900"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/60 to-transparent flex items-end p-5 sm:p-8">
             <div className="space-y-1.5 text-white">
