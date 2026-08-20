@@ -13,7 +13,10 @@ import { useSound } from '../context/SoundContext';
 
 export default function HomePage() {
   const { playClick, playHover } = useSound();
-  const flagshipProjects = projectsData.slice(0, 3);
+  const flagshipSlugs = ['fresherx', 'codecure-academy', 'makeup-artist-studio'];
+  const flagshipProjects = flagshipSlugs
+    .map((slug) => projectsData.find((p) => p.slug === slug))
+    .filter(Boolean);
   const [puneTime, setPuneTime] = useState('');
 
   useEffect(() => {
@@ -373,6 +376,19 @@ export default function HomePage() {
                     <span>View Case Study</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </Link>
+
+                  {project.demoUrl && (
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-cyan-300 hover:text-white font-bold text-xs border border-white/10 transition-all hover:scale-105"
+                      title="Live Product Demo"
+                    >
+                      <span>Live Demo</span>
+                      <ArrowUpRight className="w-3.5 h-3.5" />
+                    </a>
+                  )}
 
                   <a
                     href={project.githubUrl}

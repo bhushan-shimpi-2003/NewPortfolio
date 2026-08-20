@@ -104,39 +104,6 @@ export const skillsData = {
 
 export const projectsData = [
   {
-    slug: "talentiq",
-    title: "TalentIQ",
-    tagline: "AI-Powered Real-Time Interview Simulation & ATS Analytics Platform",
-    category: "AI & Full-Stack Web + Mobile",
-    featured: true,
-    badge: "AI Application",
-    heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
-    demoUrl: "https://intervu-frontend.vercel.app/",
-    githubUrl: "https://github.com/bhushan-shimpi-2003",
-    metrics: [
-      { label: "ATS Accuracy", value: "98%" },
-      { label: "Feedback Latency", value: "< 1.2s" },
-      { label: "User Roles", value: "Candidate & Admin" }
-    ],
-    overview: "TalentIQ is an enterprise-grade AI mock interview system designed to train technical and behavioral candidates with instantaneous constructive critiques, tone analysis, and deep resume ATS compatibility parsing.",
-    problem: "Candidates struggle with realistic interview preparation, high recruitment costs for mock evaluations, and lack actionable data on why resumes fail automated ATS screenings.",
-    solution: "Built a reactive web dashboard in React.js and a companion mobile app in React Native backed by high-speed Node/Express micro-endpoints, Supabase PostgreSQL, and modern AI language model APIs that stream real-time evaluations and generate customized improvement roadmaps.",
-    architecture: [
-      "Frontend: React.js SPA + React Native Expo Mobile App with shared state and theme tokens.",
-      "Backend: Node.js & Express REST micro-services implementing token-bucket rate limiting.",
-      "Database & Auth: Supabase (PostgreSQL) with Row-Level Security (RLS) and JWT auth.",
-      "AI Pipeline: Intelligent prompt engineering pipelines extracting resume keywords against JD requirements."
-    ],
-    techStack: ["React.js", "React Native", "Node.js", "Express.js", "Supabase", "PostgreSQL", "AI APIs", "CI/CD", "Tailwind CSS"],
-    features: [
-      "Real-time AI voice & text simulated technical & behavioral interviews",
-      "Automated PDF resume parser with ATS compatibility score & keyword match breakdown",
-      "Secure Role-Based Access Control (RBAC) with Supabase Auth & encrypted sessions",
-      "Interactive candidate performance analytics and progress trajectory charts",
-      "Full web & mobile cross-platform feature parity"
-    ]
-  },
-  {
     slug: "fresherx",
     title: "FresherX",
     tagline: "Next-Gen Multi-Role Campus Recruitment & Placement Orchestration Engine",
@@ -167,6 +134,39 @@ export const projectsData = [
       "Automated CGPA & prerequisite verification with instant candidate filtering",
       "Firebase Cloud Messaging (FCM) & Notifee push notifications for live drive updates",
       "Offline caching with TanStack Query, Gifted Charts telemetry, and Sentry error monitoring"
+    ]
+  },
+  {
+    slug: "codecure-academy",
+    title: "CodeCure Academy",
+    tagline: "Full-Stack EdTech Learning Management & Interactive Video Quiz Platform",
+    category: "EdTech Web & Mobile",
+    featured: true,
+    badge: "EdTech Platform",
+    heroImage: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1200&auto=format&fit=crop",
+    demoUrl: "https://codecuredev.com/",
+    githubUrl: "https://github.com/bhushan-shimpi-2003/CodeCure-Acedamy",
+    metrics: [
+      { label: "Test Coverage", value: "Jest + Supertest" },
+      { label: "Uptime Health", value: "Keep-Alive Cron" },
+      { label: "Platforms", value: "Web + Mobile" }
+    ],
+    overview: "CodeCure Academy is a full-stack educational hub featuring modular video courses, interactive knowledge checks, student progress telemetry, and certificate generation, supported by a React (Vite) web app and companion React Native mobile client.",
+    problem: "Traditional LMS solutions lack mobile responsiveness, fail to maintain student engagement during asynchronous study, and make tracking granular course completion difficult.",
+    solution: "Constructed a high-performance React (Vite) web portal and React Native Expo mobile application backed by Node.js/Express and Supabase, with synchronized course progression, timed interactive quizzes, automated uptime keep-alive jobs, and progress analytics.",
+    architecture: [
+      "Frontend: React.js (Vite) single-page application with Tailwind CSS and responsive UI hierarchies.",
+      "Backend: Node.js / Express REST API with Supabase integration, JWT authentication, and file upload support.",
+      "Reliability: Automated keep-alive cron job and Jest + Supertest integration test suite.",
+      "Database: PostgreSQL managed via Supabase with optimized queries for course hierarchies and quiz results."
+    ],
+    techStack: ["React.js (Vite)", "React Native", "Node.js", "Express.js", "PostgreSQL", "Supabase", "Tailwind CSS", "Jest"],
+    features: [
+      "Curated course catalogs with video lecture streaming and chapter navigation",
+      "Time-bound interactive quizzes with immediate score calculation and review",
+      "Automated server health check endpoints (`/health`) and keep-alive background worker",
+      "Student progress dashboard tracking learning streaks and completion metrics",
+      "Companion React Native mobile app (`codecure_mob`) with cross-platform sync"
     ]
   },
   {
@@ -203,36 +203,36 @@ export const projectsData = [
     ]
   },
   {
-    slug: "codecure-academy",
-    title: "CodeCure Academy",
-    tagline: "Full-Stack EdTech Learning Management & Interactive Video Quiz Platform",
-    category: "EdTech Web & Mobile",
+    slug: "talentiq",
+    title: "TalentIQ",
+    tagline: "AI-Powered Real-Time Interview Simulation & ATS Analytics Platform",
+    category: "AI & Full-Stack Web + Mobile",
     featured: true,
-    badge: "EdTech Platform",
-    heroImage: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1200&auto=format&fit=crop",
-    demoUrl: "https://codecuredev.com/",
-    githubUrl: "https://github.com/bhushan-shimpi-2003/CodeCure-Acedamy",
+    badge: "AI Application",
+    heroImage: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+    demoUrl: "https://intervu-frontend.vercel.app/",
+    githubUrl: "https://github.com/bhushan-shimpi-2003",
     metrics: [
-      { label: "Test Coverage", value: "Jest + Supertest" },
-      { label: "Uptime Health", value: "Keep-Alive Cron" },
-      { label: "Platforms", value: "Web + Mobile" }
+      { label: "ATS Accuracy", value: "98%" },
+      { label: "Feedback Latency", value: "< 1.2s" },
+      { label: "User Roles", value: "Candidate & Admin" }
     ],
-    overview: "CodeCure Academy is a full-stack educational hub featuring modular video courses, interactive knowledge checks, student progress telemetry, and certificate generation, supported by a React (Vite) web app and companion React Native mobile client.",
-    problem: "Traditional LMS solutions lack mobile responsiveness, fail to maintain student engagement during asynchronous study, and make tracking granular course completion difficult.",
-    solution: "Constructed a high-performance React (Vite) web portal and React Native Expo mobile application backed by Node.js/Express and Supabase, with synchronized course progression, timed interactive quizzes, automated uptime keep-alive jobs, and progress analytics.",
+    overview: "TalentIQ is an enterprise-grade AI mock interview system designed to train technical and behavioral candidates with instantaneous constructive critiques, tone analysis, and deep resume ATS compatibility parsing.",
+    problem: "Candidates struggle with realistic interview preparation, high recruitment costs for mock evaluations, and lack actionable data on why resumes fail automated ATS screenings.",
+    solution: "Built a reactive web dashboard in React.js and a companion mobile app in React Native backed by high-speed Node/Express micro-endpoints, Supabase PostgreSQL, and modern AI language model APIs that stream real-time evaluations and generate customized improvement roadmaps.",
     architecture: [
-      "Frontend: React.js (Vite) single-page application with Tailwind CSS and responsive UI hierarchies.",
-      "Backend: Node.js / Express REST API with Supabase integration, JWT authentication, and file upload support.",
-      "Reliability: Automated keep-alive cron job and Jest + Supertest integration test suite.",
-      "Database: PostgreSQL managed via Supabase with optimized queries for course hierarchies and quiz results."
+      "Frontend: React.js SPA + React Native Expo Mobile App with shared state and theme tokens.",
+      "Backend: Node.js & Express REST micro-services implementing token-bucket rate limiting.",
+      "Database & Auth: Supabase (PostgreSQL) with Row-Level Security (RLS) and JWT auth.",
+      "AI Pipeline: Intelligent prompt engineering pipelines extracting resume keywords against JD requirements."
     ],
-    techStack: ["React.js (Vite)", "React Native", "Node.js", "Express.js", "PostgreSQL", "Supabase", "Tailwind CSS", "Jest"],
+    techStack: ["React.js", "React Native", "Node.js", "Express.js", "Supabase", "PostgreSQL", "AI APIs", "CI/CD", "Tailwind CSS"],
     features: [
-      "Curated course catalogs with video lecture streaming and chapter navigation",
-      "Time-bound interactive quizzes with immediate score calculation and review",
-      "Automated server health check endpoints (`/health`) and keep-alive background worker",
-      "Student progress dashboard tracking learning streaks and completion metrics",
-      "Companion React Native mobile app (`codecure_mob`) with cross-platform sync"
+      "Real-time AI voice & text simulated technical & behavioral interviews",
+      "Automated PDF resume parser with ATS compatibility score & keyword match breakdown",
+      "Secure Role-Based Access Control (RBAC) with Supabase Auth & encrypted sessions",
+      "Interactive candidate performance analytics and progress trajectory charts",
+      "Full web & mobile cross-platform feature parity"
     ]
   },
   {
