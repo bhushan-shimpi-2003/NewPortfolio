@@ -144,29 +144,29 @@ export const projectsData = [
     featured: true,
     badge: "Enterprise SaaS",
     heroImage: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1200&auto=format&fit=crop",
-    demoUrl: "https://bhushanshimpi.vercel.app",
-    githubUrl: "https://github.com/bhushan-shimpi-2003",
+    demoUrl: "https://fresherx-backend.vercel.app",
+    githubUrl: "https://github.com/bhushan-shimpi-2003/FresherX",
     metrics: [
-      { label: "Supported Roles", value: "4 Distinct Portals" },
-      { label: "Workflow Automation", value: "100% Digital" },
-      { label: "Notification Delay", value: "Real-time" }
+      { label: "Mobile Framework", value: "React Native + Expo" },
+      { label: "Backend API", value: "Express 5 + TS" },
+      { label: "Notifications", value: "Firebase FCM" }
     ],
     overview: "A comprehensive university placement automation ecosystem connecting Students, College Placement Officers, Corporate HR Recruiters, and System Admins in a unified real-time workflow.",
     problem: "College placement drives suffer from disjointed spreadsheets, delayed email loops, lost student eligibility records, and manual interview scheduling bottlenecks.",
-    solution: "Engineered a high-performance Next.js & React ecosystem with Supabase backend featuring automated eligibility filtering, instant push notifications, multi-stage candidate pipelines, and digital offer letter release.",
+    solution: "Engineered a high-performance cross-platform mobile application in React Native (Expo v54) and scalable Express 5 backend with Supabase PostgreSQL, featuring automated eligibility filtering, Firebase push notifications, and multi-stage candidate pipelines.",
     architecture: [
-      "Frontend: Next.js + React.js with SSR for speed and SEO, plus React Native mobile app for live student alerts.",
-      "Security: 4-tier Role-Based Access Control (RBAC) with Supabase Auth policies.",
-      "Database: Relational PostgreSQL schema tracking student academic records, verification tiers, and drive stages.",
-      "Real-time Engine: Supabase Realtime Channels pushing instant shortlist and interview schedule alerts."
+      "Mobile Frontend: React Native (Expo v54, Expo Router v6, React 19) with TanStack Query, Zustand, FlashList, and Reanimated 4.",
+      "Backend Architecture: Modular TypeScript REST API built with Express 5, Node.js, and Sentry runtime profiling.",
+      "Database & Security: Supabase (PostgreSQL) with Row-Level Security (RLS) policies, JWT authentication, and connection pooling.",
+      "Push Notifications: Firebase Admin SDK and Notifee for instant drive alerts, schedule changes, and shortlisted candidate notices."
     ],
-    techStack: ["Next.js", "React.js", "React Native", "Node.js", "Express.js", "PostgreSQL", "Supabase", "CI/CD"],
+    techStack: ["React Native", "Expo", "TypeScript", "Express.js", "Node.js", "Supabase", "PostgreSQL", "Firebase (FCM)", "Sentry"],
     features: [
-      "4 Dedicated Portals: Student Dashboard, HR Recruiter Panel, Placement Officer HUD, Superadmin",
+      "4 Dedicated Roles: Student Dashboard, HR Recruiter Panel, Placement Officer HUD, and Superadmin",
       "End-to-end recruitment drive management with customizable hiring round stages",
-      "Automated CGPA & skill prerequisite verification for candidate filtering",
-      "Real-time status tracking, instant interview invites, and offer generation",
-      "Exportable analytics and placement drive KPI reports"
+      "Automated CGPA & prerequisite verification with instant candidate filtering",
+      "Firebase Cloud Messaging (FCM) & Notifee push notifications for live drive updates",
+      "Offline caching with TanStack Query, Gifted Charts telemetry, and Sentry error monitoring"
     ]
   },
   {
@@ -178,7 +178,7 @@ export const projectsData = [
     badge: "Client Web App",
     heroImage: "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?q=80&w=1200&auto=format&fit=crop",
     demoUrl: "https://makeup-artist-git-main-bhushans-projects-ceafe26e.vercel.app/",
-    githubUrl: "https://github.com/bhushan-shimpi-2003",
+    githubUrl: "https://github.com/bhushan-shimpi-2003/MakeupArtist",
     metrics: [
       { label: "Booking Speed", value: "< 45 sec" },
       { label: "Lead Inquiries", value: "+60%" },
@@ -211,28 +211,28 @@ export const projectsData = [
     badge: "EdTech Platform",
     heroImage: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1200&auto=format&fit=crop",
     demoUrl: "https://codecuredev.com/",
-    githubUrl: "https://github.com/bhushan-shimpi-2003",
+    githubUrl: "https://github.com/bhushan-shimpi-2003/CodeCure-Acedamy",
     metrics: [
-      { label: "Feature Parity", value: "100% Web/Mobile" },
-      { label: "Quiz Validation", value: "Instant" },
-      { label: "Video Delivery", value: "Adaptive" }
+      { label: "Test Coverage", value: "Jest + Supertest" },
+      { label: "Uptime Health", value: "Keep-Alive Cron" },
+      { label: "Platforms", value: "Web + Mobile" }
     ],
-    overview: "An immersive educational hub featuring modular video courses, interactive knowledge checks, student progress telemetry, and certificate generation.",
+    overview: "CodeCure Academy is a full-stack educational hub featuring modular video courses, interactive knowledge checks, student progress telemetry, and certificate generation, supported by a React (Vite) web app and companion React Native mobile client.",
     problem: "Traditional LMS solutions lack mobile responsiveness, fail to maintain student engagement during asynchronous study, and make tracking granular course completion difficult.",
-    solution: "Constructed a seamless MERN web portal and React Native Expo mobile application with synchronized course progression, timed interactive quizzes, secure user onboarding, and progress analytics.",
+    solution: "Constructed a high-performance React (Vite) web portal and React Native Expo mobile application backed by Node.js/Express and Supabase, with synchronized course progression, timed interactive quizzes, automated uptime keep-alive jobs, and progress analytics.",
     architecture: [
-      "Frontend: React.js with Tailwind CSS + React Native Expo app with offline caching.",
-      "Auth: Secure registration workflows with email verification, password reset, and JWT tokens.",
-      "Database: PostgreSQL managed via Supabase with optimized queries for course hierarchies and quiz results.",
-      "Analytics: Custom telemetry engine calculating completion percentages and quiz mastery score."
+      "Frontend: React.js (Vite) single-page application with Tailwind CSS and responsive UI hierarchies.",
+      "Backend: Node.js / Express REST API with Supabase integration, JWT authentication, and file upload support.",
+      "Reliability: Automated keep-alive cron job and Jest + Supertest integration test suite.",
+      "Database: PostgreSQL managed via Supabase with optimized queries for course hierarchies and quiz results."
     ],
-    techStack: ["React.js", "React Native", "Node.js", "Express.js", "PostgreSQL", "Supabase", "Tailwind CSS"],
+    techStack: ["React.js (Vite)", "React Native", "Node.js", "Express.js", "PostgreSQL", "Supabase", "Tailwind CSS", "Jest"],
     features: [
       "Curated course catalogs with video lecture streaming and chapter navigation",
       "Time-bound interactive quizzes with immediate score calculation and review",
+      "Automated server health check endpoints (`/health`) and keep-alive background worker",
       "Student progress dashboard tracking learning streaks and completion metrics",
-      "Cross-platform synchronization between web browser and mobile device",
-      "Automated completion certification"
+      "Companion React Native mobile app (`codecure_mob`) with cross-platform sync"
     ]
   },
   {
